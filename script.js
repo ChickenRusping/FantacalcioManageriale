@@ -59,21 +59,28 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(response => response.text())
             .then(csvData => {
                 const allPlayers = parseCSV(csvData);
-                displayPlayersByTeam(allPlayers); // Nuova funzione per gestire la visualizzazione per squadra
-                displaySvincolati(allPlayers);     // Mantiene la funzione per gli svincolati
+                displayPlayersByTeam(allPlayers);
+                displaySvincolati(allPlayers);
             })
             .catch(error => console.error('Errore nel caricamento dei dati:', error));
     }
 
     function parseCSV(csvText) {
         const lines = csvText.split('\n');
-        const headers = lines[0].split(',').map(header => header.trim());
+        const rawHeaders = lines[0].split(';').map(header => header.trim());
+        const headers = rawHeaders; // Mantieni le intestazioni originali per ora
+
+        // Opzione per normalizzare i nomi delle proprietà (consigliato per robustezza):
+        /*
+        const headers = rawHeaders.map(header => header.replace(/ /g, '_'));
+        */
+
         const players = [];
         for (let i = 1; i < lines.length; i++) {
-            const values = lines[i].split(',');
-            if (values.length === headers.length) {
+            const values = lines[i].split(';');
+            if (values.length === rawHeaders.length) {
                 const player = {};
-                for (let j = 0; j < headers.length; j++) {
+                for (let j = 0; j < rawHeaders.length; j++) {
                     player[headers[j]] = values[j].trim();
                 }
                 players.push(player);
@@ -84,35 +91,34 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function displayPlayersByTeam(allPlayers) {
         const teamSections = {
-            'alcool-campi': document.querySelector('#alcool-campi-content h3#squadra-rosa + p'),
-            'balillareal': document.querySelector('#balillareal-content h3#squadra-rosa + p'),
-            'lascopo-educativo': document.querySelector('#lascopo-educativo-content h3#squadra-rosa + p'),
-            'ac-finocchiona': document.querySelector('#ac-finocchiona-content h3#squadra-rosa + p'),
-            'as-fogliatella': document.querySelector('#as-fogliatella-content h3#squadra-rosa + p'),
-            'dandandan': document.querySelector('#dandandan-content h3#squadra-rosa + p'),
-            'as-pisciazz': document.querySelector('#as-pisciazz-content h3#squadra-rosa + p'),
-            'ac-minchia': document.querySelector('#ac-minchia-content h3#squadra-rosa + p')
-            // Aggiungi qui le altre squadre con i selettori corretti
+            'alcool-campi': document.querySelector('#alcool-campi-content .team-roster'),
+            'balillareal': document.querySelector('#balillareal-content .team-roster'),
+            'lascopo-educativo': document.querySelector('#lascopo-educativo-content .team-roster'),
+            'ac-finocchiona': document.querySelector('#ac-finocchiona-content .team-roster'),
+            'as-fogliatella': document.querySelector('#as-fogliatella-content .team-roster'),
+            'dandandan': document.querySelector('#dandandan-content .team-roster'),
+            'as-pisciazz': document.querySelector('#as-pisciazz-content .team-roster'),
+            'ac-minchia': document.querySelector('#ac-minchia-content .team-roster')
+            // Aggiungi qui le altre squadre con i selettori corretti (.team-roster)
         };
 
         for (const teamId in teamSections) {
             if (teamSections.hasOwnProperty(teamId)) {
-                const teamParagraph = teamSections[teamId];
-                if (teamParagraph) {
-                    teamParagraph.innerHTML = createTableHTML();
-                    const tableBody = teamParagraph.querySelector('tbody');
-                    const teamNameInCSV = teamId.toLowerCase().replace(/-/g, ' '); // Converti l'ID in formato nome squadra nel CSV
-                    populateTeamTable(tableBody, allPlayers, teamNameInCSV);
+                const teamRosterDiv = teamSections[teamId];
+                if (teamRosterDiv) {
+                    teamRosterDiv.innerHTML = createTableHTML();
+                    const tableBody = teamRosterDiv.querySelector('tbody');
+                    populateTeamTable(tableBody, allPlayers, teamId); // Usa teamId direttamente per confrontare
                 }
             }
         }
     }
 
     function displaySvincolati(allPlayers) {
-        const svincolatiParagraph = document.querySelector('#svincolati-content .free-agents');
-        if (svincolatiParagraph) {
-            svincolatiParagraph.innerHTML = createTableHTML();
-            const tableBody = svincolatiParagraph.querySelector('tbody');
+        const svincolatiDiv = document.querySelector('#svincolati-content .free-agents');
+        if (svincolatiDiv) {
+            svincolatiDiv.innerHTML = createTableHTML();
+            const tableBody = svincolatiDiv.querySelector('tbody');
             populateSvincolatiTable(tableBody, allPlayers);
         }
     }
@@ -134,16 +140,16 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
     }
 
-    function populateTeamTable(tableBody, allPlayers, teamName) {
+    function populateTeamTable(tableBody, allPlayers, teamId) {
         allPlayers.forEach(player => {
-            if (player['Squadra Fanta'] && player['Squadra Fanta'].toLowerCase() === teamName) {
+            if (player['Squadra Fanta'] && player['Squadra Fanta'].toLowerCase() === teamId) {
                 tableBody.innerHTML += `
                     <tr>
                         <td>${player.Ruolo || ''}</td>
                         <td>${player.Nome || ''}</td>
                         <td>${formatCurrency(player.Quotazione)}</td>
                         <td>${formatCurrency(player.Stipendio)}</td>
-                        <td>${formatCurrency(player.Clausola_Rescissoria)}</td>
+                        <td>${formatCurrency(player['Clausola Rescissoria'])}</td>
                     </tr>
                 `;
             }
@@ -159,7 +165,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <td>${player.Nome || ''}</td>
                         <td>${formatCurrency(player.Quotazione)}</td>
                         <td>${formatCurrency(player.Stipendio)}</td>
-                        <td>${formatCurrency(player.Clausola_Rescissoria)}</td>
+                        <td>${formatCurrency(player['Clausola Rescissoria'])}</td>
                     </tr>
                 `;
             }
