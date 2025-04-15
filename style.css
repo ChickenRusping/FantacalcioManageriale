@@ -1,40 +1,31 @@
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+  font-family: sans-serif;
+  padding: 20px;
 }
 
-.tab-container {
-  display: flex;
-  flex-direction: column;
-}
-
-.tab-buttons {
+.tab-buttons, .sub-tabs {
   display: flex;
   flex-wrap: wrap;
-  background-color: #f0f0f0;
-  padding: 10px;
+  gap: 10px;
+  margin-bottom: 15px;
 }
 
-.tab-buttons button {
-  margin: 5px;
-  padding: 10px 20px;
-  cursor: pointer;
+button {
+  padding: 8px 12px;
+  background: #f0f0f0;
   border: none;
-  background-color: #ddd;
-  border-radius: 5px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.tab-buttons button:hover {
-  background-color: #ccc;
+button:hover {
+  background: #dcdcdc;
 }
 
-.tab-content {
-  display: none;
-  padding: 20px;
-  background-color: #fff;
-}
-
-.tab-content.active {
-  display: block;
+.content {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #fafafa;
 }
