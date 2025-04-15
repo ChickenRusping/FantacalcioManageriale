@@ -1,3 +1,4 @@
+/* Stili generali */
 body {
     font-family: sans-serif;
     margin: 0;
@@ -110,34 +111,41 @@ nav li.active a {
 
 /* Stili per le tabelle dei giocatori  */
 .team-players table,
-.free-agents table {
+.free-agents table,
+table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
+    overflow-x: auto; /* Aggiunto per lo scorrimento orizzontale */
 }
 
 .team-players th,
 .team-players td,
 .free-agents th,
-.free-agents td {
+.free-agents td,
+th,
+td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
 }
 
 .team-players th,
-.free-agents th {
+.free-agents th,
+th {
     background-color: #f2f2f2;
     font-weight: bold;
 }
 
 .team-players tr:nth-child(even),
-.free-agents tr:nth-child(even) {
+.free-agents tr:nth-child(even),
+tbody tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
 .team-players tr:hover,
-.free-agents tr:hover {
+.free-agents tr:hover,
+tbody tr:hover {
     background-color: #f1f1f1;
 }
 
@@ -191,56 +199,5 @@ footer {
 }
 
 #svincolati-content {
-    /* Stili per il contenitore principale */
-}
-
-.giocatore {
-    border: 1px solid #ddd;
-    margin-bottom: 10px;
-    padding: 10px;
-}
-
-.nome {
-    font-weight: bold;
-}
-
-.ruolo {
-    /* Stili per il ruolo */
-}
-
-.squadra {
-    /* Stili per la squadra */
-}
-
-.eta {
-    /* Stili per l'età */
-}
-
-.quotazione {
-    font-size: 0.9em;
-    color: #888;
-}
-
-.stipendio {
-    /* Stili per lo stipendio */
-}
-
-.clausola {
-    /* Stili per la clausola */
-}
-
-.interesse {
-    /* Stili per l'interesse */
-}
-
-.data {
-    /* Stili per la data */
-}
-
-.altri {
-    /* Stili per altri interessati */
-}
-
-.scadenza {
-    /* Stili per la scadenza */
+    /* Stili per il contenitore principale (se necessario) */
 }
