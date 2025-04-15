@@ -1,15 +1,19 @@
 // Funzione per mostrare la tab selezionata
 function showTab(tabName) {
+  // Nascondi tutte le tab
   const tabs = document.querySelectorAll('.tab-content');
   tabs.forEach(tab => {
     tab.style.display = 'none';
   });
 
-  // Mostra la tab corrente
+  // Mostra la tab selezionata
   const tab = document.getElementById(tabName);
   if (tab) {
     tab.style.display = 'block';
-    // Carica il sottotab "Descrizione" all'apertura della tab
+  }
+
+  // Se la tab è una tab di presidente, mostra il sottotab "descrizione"
+  if (tabName !== 'regolamento') {
     showSubTab(tabName, 'descrizione');
   }
 }
@@ -21,56 +25,91 @@ function showSubTab(tabName, subTabName) {
     sub.style.display = 'none';
   });
 
+  // Mostra la sottotab selezionata
   const subTab = document.getElementById(`${tabName}-${subTabName}`);
   if (subTab) {
     subTab.style.display = 'block';
   }
 }
 
-// Aggiungi automaticamente i contenuti per ogni tab
-function addContentForTabs() {
-  const presidentTabs = ['alcoolCampi', 'borgio', 'pippo', 'fanfa', 'maro', 'gigiEdo', 'dani', 'albe'];
-  const subTabNames = ['descrizione', 'rosa', 'bilancio', 'movimenti'];
+// Aggiungi contenuti per la tab di regolamento
+function addRegolamentoContent() {
+  const regolamentoTab = document.getElementById('regolamento');
+  regolamentoTab.innerHTML = `
+    <h2>Regolamento</h2>
+    <div class="sub-tab-buttons">
+      <button onclick="showSubTab('regolamento', 'rosa')">Rosa</button>
+      <button onclick="showSubTab('regolamento', 'asta')">Asta</button>
+      <button onclick="showSubTab('regolamento', 'stipendi')">Stipendi</button>
+      <button onclick="showSubTab('regolamento', 'svincoli')">Svincoli</button>
+      <button onclick="showSubTab('regolamento', 'acquisti')">Acquisti tra Presidenti</button>
+      <button onclick="showSubTab('regolamento', 'guadagno')">Guadagno Crediti</button>
+      <button onclick="showSubTab('regolamento', 'premi')">Premi Stagionali</button>
+      <button onclick="showSubTab('regolamento', 'investimenti')">Investimenti</button>
+      <button onclick="showSubTab('regolamento', 'spese')">Spese Fisse</button>
+      <button onclick="showSubTab('regolamento', 'penalizzazioni')">Penalizzazioni</button>
+      <button onclick="showSubTab('regolamento', 'regole')">Regole Partita</button>
+    </div>
+    <div id="regolamento-rosa" class="sub-tab-content">Contenuti per Rosa</div>
+    <div id="regolamento-asta" class="sub-tab-content">Contenuti per Asta</div>
+    <div id="regolamento-stipendi" class="sub-tab-content">Contenuti per Stipendi</div>
+    <div id="regolamento-svincoli" class="sub-tab-content">Contenuti per Svincoli</div>
+    <div id="regolamento-acquisti" class="sub-tab-content">Contenuti per Acquisti tra Presidenti</div>
+    <div id="regolamento-guadagno" class="sub-tab-content">Contenuti per Guadagno Crediti</div>
+    <div id="regolamento-premi" class="sub-tab-content">Contenuti per Premi Stagionali</div>
+    <div id="regolamento-investimenti" class="sub-tab-content">Contenuti per Investimenti</div>
+    <div id="regolamento-spese" class="sub-tab-content">Contenuti per Spese Fisse</div>
+    <div id="regolamento-penalizzazioni" class="sub-tab-content">Contenuti per Penalizzazioni</div>
+    <div id="regolamento-regole" class="sub-tab-content">Contenuti per Regole Partita</div>
+  `;
+}
 
+// Aggiungi contenuti unici per ogni tab di presidente
+function addPresidentsContent() {
+  const presidentTabs = ['alcoolCampi', 'borgio', 'pippo', 'fanfa', 'maro', 'gigiEdo', 'dani', 'albe'];
+  
+  const presidentData = {
+    'alcoolCampi': {
+      'descrizione': {
+        'images': ['img1.jpg', 'img2.jpg', 'img3.jpg', 'img4.jpg'],
+        'text': 'Descrizione di Alcool Campi.'
+      },
+    },
+    'borgio': {
+      'descrizione': {
+        'images': ['img1_borgio.jpg', 'img2_borgio.jpg', 'img3_borgio.jpg', 'img4_borgio.jpg'],
+        'text': 'Descrizione di Borgio.'
+      },
+    },
+    // Aggiungi i dati per gli altri presidenti
+  };
+  
   presidentTabs.forEach(tabName => {
     const tabContent = document.getElementById(tabName);
-
-    // Crea i sottotab
-    const subTabButtons = document.createElement('div');
-    subTabButtons.classList.add('sub-tab-buttons');
-    subTabNames.forEach(subTabName => {
-      const button = document.createElement('button');
-      button.textContent = subTabName.charAt(0).toUpperCase() + subTabName.slice(1);
-      button.onclick = () => showSubTab(tabName, subTabName);
-      subTabButtons.appendChild(button);
-    });
-
-    tabContent.appendChild(subTabButtons);
-
-    // Aggiungi contenuti per ogni sottotab
-    subTabNames.forEach(subTabName => {
-      const subTabContent = document.createElement('div');
-      subTabContent.classList.add('sub-tab-content');
-      subTabContent.id = `${tabName}-${subTabName}`;
-
-      if (subTabName === 'descrizione') {
-        subTabContent.innerHTML = `
-          <div class="image-row">
-            <img src="images/img1.jpg" alt="Immagine 1" />
-            <img src="images/img2.jpg" alt="Immagine 2" />
-            <img src="images/img3.jpg" alt="Immagine 3" />
-            <img src="images/img4.jpg" alt="Immagine 4" />
-          </div>
-          <p class="description-text">Descrizione del presidente ${tabName}</p>
-        `;
-      } else {
-        subTabContent.textContent = `${subTabName.charAt(0).toUpperCase() + subTabName.slice(1)} content for ${tabName}`;
-      }
-
-      tabContent.appendChild(subTabContent);
-    });
+    
+    // Aggiungi i sottotab
+    tabContent.innerHTML = `
+      <h2>Descrizione</h2>
+      <div class="sub-tab-buttons">
+        <button onclick="showSubTab('${tabName}', 'descrizione')">Descrizione</button>
+        <button onclick="showSubTab('${tabName}', 'rosa')">Rosa</button>
+        <button onclick="showSubTab('${tabName}', 'bilancio')">Bilancio</button>
+        <button onclick="showSubTab('${tabName}', 'movimenti')">Movimenti</button>
+      </div>
+      <div id="${tabName}-descrizione" class="sub-tab-content">
+        <div class="image-row">
+          <img src="${presidentData[tabName].descrizione.images[0]}" alt="Immagine 1" />
+          <img src="${presidentData[tabName].descrizione.images[1]}" alt="Immagine 2" />
+          <img src="${presidentData[tabName].descrizione.images[2]}" alt="Immagine 3" />
+          <img src="${presidentData[tabName].descrizione.images[3]}" alt="Immagine 4" />
+        </div>
+        <p>${presidentData[tabName].descrizione.text}</p>
+      </div>
+    `;
   });
 }
 
-// Chiamata per aggiungere automaticamente i contenuti quando la pagina è caricata
-document.addEventListener('DOMContentLoaded', addContentForTabs);
+// Inizializza le funzioni
+addRegolamentoContent();
+addPresidentsContent();
+showTab('regolamento');
