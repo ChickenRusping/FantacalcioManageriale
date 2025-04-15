@@ -5,6 +5,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const squadreSidebar = document.getElementById('squadre-sidebar');
     const sidebarTitle = squadreSidebar.querySelector('h3');
 
+    // Configurazione per il Google Sheet dei movimenti (STRUTTURA AGGIORNATA)
+    const MOVIMENTI_SHEET_ID = 'YOUR_MOVIMENTI_SHEET_ID'; // Inserisci qui l'ID del tuo foglio Google
+    const MOVIMENTI_SHEET_NAME = 'Sheet1'; // Inserisci qui il nome del foglio
+    const MOVIMENTI_URL = `https://docs.google.com/spreadsheets/d/${MOVIMENTI_SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(MOVIMENTI_SHEET_NAME)}`;
+
     function hideAllSections() {
         contentSections.forEach(section => section.style.display = 'none');
     }
@@ -32,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     regolamentoSidebar.style.display = 'none';
                     const squadraNome = this.textContent;
                     sidebarTitle.textContent = squadraNome;
+                    loadTeamMovimentiFromSheet(squadraNome);
                 } else if (targetId === 'svincolati-content') {
                     regolamentoSidebar.style.display = 'none';
                     squadreSidebar.style.display = 'none';
@@ -62,18 +68,35 @@ document.addEventListener('DOMContentLoaded', function() {
                 displayPlayersByTeam(allPlayers);
                 displaySvincolati(allPlayers);
             })
-            .catch(error => console.error('Errore nel caricamento dei dati:', error));
+            .catch(error => console.error('Errore nel caricamento dei dati dei giocatori:', error));
+
+        loadAllMovimentiFromSheet();
+    }
+
+    function loadAllMovimentiFromSheet() {
+        fetch(MOVIMENTI_URL)
+            .then(response => response.text())
+            .then(csvData => {
+                const allMovimenti = parseMovimentiSheetCSV(csvData);
+                displayAllMovimenti(allMovimenti);
+            })
+            .catch(error => console.error('Errore nel caricamento dei dati dei movimenti dal Google Sheet:', error));
+    }
+
+    function loadTeamMovimentiFromSheet(teamName) {
+        fetch(MOVIMENTI_URL)
+            .then(response => response.text())
+            .then(csvData => {
+                const allMovimenti = parseMovimentiSheetCSV(csvData);
+                displayTeamMovimenti(teamName, allMovimenti);
+            })
+            .catch(error => console.error(`Errore nel caricamento dei movimenti per ${teamName} dal Google Sheet:`, error));
     }
 
     function parseCSV(csvText) {
         const lines = csvText.split('\n');
         const rawHeaders = lines[0].split(';').map(header => header.trim());
-        const headers = rawHeaders; // Mantieni le intestazioni originali per ora
-
-        // Opzione per normalizzare i nomi delle proprietà (consigliato per robustezza):
-        /*
-        const headers = rawHeaders.map(header => header.replace(/ /g, '_'));
-        */
+        const headers = rawHeaders;
 
         const players = [];
         for (let i = 1; i < lines.length; i++) {
@@ -89,6 +112,91 @@ document.addEventListener('DOMContentLoaded', function() {
         return players;
     }
 
+    function parseMovimentiSheetCSV(csvText) {
+        const lines = csvText.split('\n').slice(1);
+        if (lines.length < 1) return [];
+        const headers = ['Data', 'Tipo', 'Descrizione', 'Valore', 'Squadra']; // Intestazioni AGGIORNATE
+        const movimenti = [];
+        for (let i = 0; i < lines.length; i++) {
+            const values = lines[i].split(',');
+            if (values.length >= headers.length) {
+                const movimento = {};
+                for (let j = 0; j < headers.length; j++) {
+                    movimento[headers[j]] = values[j].trim().replace(/"/g, '');
+                }
+                movimenti.push(movimento);
+            }
+        }
+        return movimenti;
+    }
+
+    function displayAllMovimenti(allMovimenti) {
+        const teamMovimentiSections = {
+            'alcool-campi': document.querySelector('#alcool-campi-content .tabella-movimenti'),
+            'balillareal': document.querySelector('#balillareal-content .tabella-movimenti'),
+            'lascopo-educativo': document.querySelector('#lascopo-educativo-content .tabella-movimenti'),
+            'ac-finocchiona': document.querySelector('#ac-finocchiona-content .tabella-movimenti'),
+            'as-fogliatella': document.querySelector('#as-fogliatella-content .tabella-movimenti'),
+            'dandandan': document.querySelector('#dandandan-content .tabella-movimenti'),
+            'as-pisciazz': document.querySelector('#as-pisciazz-content .tabella-movimenti'),
+            'ac-minchia': document.querySelector('#ac-minchia-content .tabella-movimenti')
+        };
+
+        for (const teamId in teamMovimentiSections) {
+            if (teamMovimentiSections.hasOwnProperty(teamId)) {
+                const movimentiDiv = teamMovimentiSections[teamId];
+                if (movimentiDiv) {
+                    movimentiDiv.innerHTML = createMovimentiTableHTML();
+                    const tableBody = movimentiDiv.querySelector('tbody');
+                    populateMovimentiTable(tableBody, allMovimenti, teamId);
+                }
+            }
+        }
+    }
+
+    function displayTeamMovimenti(teamName, allMovimenti) {
+        const teamId = teamName.toLowerCase().replace(/ /g, '-');
+        const movimentiDiv = document.querySelector(`#${teamId}-content .tabella-movimenti`);
+
+        if (movimentiDiv) {
+            movimentiDiv.innerHTML = createMovimentiTableHTML();
+            const tableBody = movimentiDiv.querySelector('tbody');
+            populateMovimentiTable(tableBody, allMovimenti, teamId);
+        }
+    }
+
+    function createMovimentiTableHTML() {
+        return `
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Tipo</th>
+                        <th>Descrizione</th>
+                        <th>Valore</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        `;
+    }
+
+    function populateMovimentiTable(tableBody, allMovimenti, teamId) {
+        allMovimenti.forEach(movimento => {
+            const squadraCoinvolta = movimento['Squadra'];
+            if (squadraCoinvolta && squadraCoinvolta.toLowerCase().replace(/ /g, '-') === teamId) {
+                tableBody.innerHTML += `
+                    <tr>
+                        <td>${movimento.Data || ''}</td>
+                        <td>${movimento.Tipo || ''}</td>
+                        <td>${movimento.Descrizione || ''}</td>
+                        <td>${formatCurrency(movimento.Valore)}</td>
+                    </tr>
+                `;
+            }
+        });
+    }
+
     function displayPlayersByTeam(allPlayers) {
         const teamSections = {
             'alcool-campi': document.querySelector('#alcool-campi-content .team-roster'),
@@ -99,16 +207,15 @@ document.addEventListener('DOMContentLoaded', function() {
             'dandandan': document.querySelector('#dandandan-content .team-roster'),
             'as-pisciazz': document.querySelector('#as-pisciazz-content .team-roster'),
             'ac-minchia': document.querySelector('#ac-minchia-content .team-roster')
-            // Aggiungi qui le altre squadre con i selettori corretti (.team-roster)
         };
 
         for (const teamId in teamSections) {
             if (teamSections.hasOwnProperty(teamId)) {
                 const teamRosterDiv = teamSections[teamId];
                 if (teamRosterDiv) {
-                    teamRosterDiv.innerHTML = createTableHTML();
+                    teamRosterDiv.innerHTML = createTableHTML('Rosa');
                     const tableBody = teamRosterDiv.querySelector('tbody');
-                    populateTeamTable(tableBody, allPlayers, teamId); // Usa teamId direttamente per confrontare
+                    populateTeamTable(tableBody, allPlayers, teamId);
                 }
             }
         }
@@ -117,23 +224,29 @@ document.addEventListener('DOMContentLoaded', function() {
     function displaySvincolati(allPlayers) {
         const svincolatiDiv = document.querySelector('#svincolati-content .free-agents');
         if (svincolatiDiv) {
-            svincolatiDiv.innerHTML = createTableHTML();
+            svincolatiDiv.innerHTML = createTableHTML('Svincolati');
             const tableBody = svincolatiDiv.querySelector('tbody');
             populateSvincolatiTable(tableBody, allPlayers);
         }
     }
 
-    function createTableHTML() {
+    function createTableHTML(type) {
+        let headers = '';
+        if (type === 'Rosa' || type === 'Svincolati') {
+            headers = `
+                <tr>
+                    <th>Ruolo</th>
+                    <th>Nome</th>
+                    <th>Quotazione</th>
+                    <th>Stipendio</th>
+                    <th>Clausola Rescissoria</th>
+                </tr>
+            `;
+        }
         return `
             <table>
                 <thead>
-                    <tr>
-                        <th>Ruolo</th>
-                        <th>Nome</th>
-                        <th>Quotazione</th>
-                        <th>Stipendio</th>
-                        <th>Clausola Rescissoria</th>
-                    </tr>
+                    ${headers}
                 </thead>
                 <tbody></tbody>
             </table>
