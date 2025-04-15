@@ -5,31 +5,25 @@ document.addEventListener('DOMContentLoaded', function() {
     const squadreSidebar = document.getElementById('squadre-sidebar');
     const sidebarTitle = squadreSidebar.querySelector('h3');
 
-    // Funzioni di gestione della navigazione e delle sezioni
     function hideAllSections() {
-        contentSections.forEach(section => {
-            section.style.display = 'none';
-        });
+        contentSections.forEach(section => section.style.display = 'none');
     }
 
     function deactivateAllLinks() {
-        navLinks.forEach(link => {
-            link.parentNode.classList.remove('active');
-        });
+        navLinks.forEach(link => link.parentNode.classList.remove('active'));
     }
 
     function setupNavigation() {
         navLinks.forEach(link => {
             link.addEventListener('click', function(event) {
                 event.preventDefault();
-                const targetId = this.getAttribute('href').substring(1); // Rimuovi l'#
+                const targetId = this.getAttribute('href').substring(1);
 
                 hideAllSections();
                 document.getElementById(targetId).style.display = 'block';
                 deactivateAllLinks();
                 this.parentNode.classList.add('active');
 
-                // Mostra la sidebar corretta
                 if (targetId === 'regolamento-content') {
                     regolamentoSidebar.style.display = 'block';
                     squadreSidebar.style.display = 'none';
@@ -51,28 +45,22 @@ document.addEventListener('DOMContentLoaded', function() {
         sidebarLinks.forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-
                 const targetId = this.getAttribute('href').substring(1);
                 const targetElement = document.getElementById(targetId);
-
                 if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start' // Per allineare l'elemento all'inizio della vista
-                    });
+                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });
     }
 
-    // Funzioni per caricare e visualizzare i dati
     function loadAndProcessData() {
         fetch('players.csv')
             .then(response => response.text())
             .then(csvData => {
                 const allPlayers = parseCSV(csvData);
-                displayTeamPlayers(allPlayers);
-                displaySvincolati(allPlayers);
+                displayPlayersByTeam(allPlayers); // Nuova funzione per gestire la visualizzazione per squadra
+                displaySvincolati(allPlayers);     // Mantiene la funzione per gli svincolati
             })
             .catch(error => console.error('Errore nel caricamento dei dati:', error));
     }
@@ -81,7 +69,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const lines = csvText.split('\n');
         const headers = lines[0].split(',').map(header => header.trim());
         const players = [];
-
         for (let i = 1; i < lines.length; i++) {
             const values = lines[i].split(',');
             if (values.length === headers.length) {
@@ -95,48 +82,42 @@ document.addEventListener('DOMContentLoaded', function() {
         return players;
     }
 
-    function displayTeamPlayers(allPlayers) {
-        contentSections.forEach(section => {
-            if (section.id.endsWith('-content') && section.id !== 'svincolati-content') {
-                const teamName = section.id.replace('-content', '');
-                const teamContainer = section.querySelector('.team-players');
-                if (teamContainer) {
-                    teamContainer.innerHTML = createTableHTMLForTeams(); // Usa la nuova funzione per le squadre
-                    const tableBody = teamContainer.querySelector('tbody');
-                    populateTeamTable(tableBody, allPlayers, teamName);
+    function displayPlayersByTeam(allPlayers) {
+        const teamSections = {
+            'alcool-campi': document.querySelector('#alcool-campi-content h3#squadra-rosa + p'),
+            'balillareal': document.querySelector('#balillareal-content h3#squadra-rosa + p'),
+            'lascopo-educativo': document.querySelector('#lascopo-educativo-content h3#squadra-rosa + p'),
+            'ac-finocchiona': document.querySelector('#ac-finocchiona-content h3#squadra-rosa + p'),
+            'as-fogliatella': document.querySelector('#as-fogliatella-content h3#squadra-rosa + p'),
+            'dandandan': document.querySelector('#dandandan-content h3#squadra-rosa + p'),
+            'as-pisciazz': document.querySelector('#as-pisciazz-content h3#squadra-rosa + p'),
+            'ac-minchia': document.querySelector('#ac-minchia-content h3#squadra-rosa + p')
+            // Aggiungi qui le altre squadre con i selettori corretti
+        };
+
+        for (const teamId in teamSections) {
+            if (teamSections.hasOwnProperty(teamId)) {
+                const teamParagraph = teamSections[teamId];
+                if (teamParagraph) {
+                    teamParagraph.innerHTML = createTableHTML();
+                    const tableBody = teamParagraph.querySelector('tbody');
+                    const teamNameInCSV = teamId.toLowerCase().replace(/-/g, ' '); // Converti l'ID in formato nome squadra nel CSV
+                    populateTeamTable(tableBody, allPlayers, teamNameInCSV);
                 }
             }
-        });
+        }
     }
 
     function displaySvincolati(allPlayers) {
-        const svincolatiContainer = document.getElementById('svincolati-content').querySelector('.free-agents');
-        if (svincolatiContainer) {
-            svincolatiContainer.innerHTML = createTableHTMLForSvincolati(); // Usa la nuova funzione per gli svincolati
-            const tableBody = svincolatiContainer.querySelector('tbody');
+        const svincolatiParagraph = document.querySelector('#svincolati-content .free-agents');
+        if (svincolatiParagraph) {
+            svincolatiParagraph.innerHTML = createTableHTML();
+            const tableBody = svincolatiParagraph.querySelector('tbody');
             populateSvincolatiTable(tableBody, allPlayers);
         }
     }
 
-    // Funzioni di supporto per la creazione e popolazione delle tabelle
-    function createTableHTMLForTeams() {
-        return `
-            <table>
-                <thead>
-                    <tr>
-                        <th>Ruolo</th>
-                        <th>Nome</th>
-                        <th>Quotazione</th>
-                        <th>Stipendio</th>
-                        <th>Clausola Rescissoria</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
-        `;
-    }
-
-    function createTableHTMLForSvincolati() {
+    function createTableHTML() {
         return `
             <table>
                 <thead>
@@ -155,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function populateTeamTable(tableBody, allPlayers, teamName) {
         allPlayers.forEach(player => {
-            if (player['Squadra Fanta'] && player['Squadra Fanta'].toLowerCase() === teamName.toLowerCase()) {
+            if (player['Squadra Fanta'] && player['Squadra Fanta'].toLowerCase() === teamName) {
                 tableBody.innerHTML += `
                     <tr>
                         <td>${player.Ruolo || ''}</td>
@@ -189,7 +170,6 @@ document.addEventListener('DOMContentLoaded', function() {
         return value ? '€ ' + parseFloat(value).toLocaleString('it-IT') : 'N/A';
     }
 
-    // Inizializzazione
     hideAllSections();
     document.getElementById('regolamento-content').style.display = 'block';
     document.querySelector('header nav ul li:first-child').classList.add('active');
