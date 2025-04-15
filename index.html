@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -8,28 +8,49 @@
 </head>
 <body>
   <div class="tab-container">
-    <!-- Tab principali -->
-    <div class="tab-buttons" id="mainTabs">
-      <button onclick="showTab('alcool campi')">Alcool Campi</button>
+    <div class="tab-buttons">
+      <button onclick="showTab('alcoolCampi')">Alcool Campi</button>
       <button onclick="showTab('borgio')">Borgio</button>
       <button onclick="showTab('pippo')">Pippo</button>
       <button onclick="showTab('fanfa')">Fanfa</button>
       <button onclick="showTab('maro')">Maro</button>
-      <button onclick="showTab('gigi e edo')">Gigi e Edo</button>
+      <button onclick="showTab('gigiEdo')">Gigi e Edo</button>
       <button onclick="showTab('dani')">Dani</button>
       <button onclick="showTab('albe')">Albe</button>
       <button onclick="showTab('regolamento')">Regolamento</button>
     </div>
 
-    <!-- Sottotab dinamici -->
-    <div class="sub-tabs" id="subTabs"></div>
-
-    <!-- Area contenuti -->
-    <div class="content" id="contentArea">
-      <p>Caricamento in corso...</p>
+    <!-- Content for each tab -->
+    <div class="tab-content" id="alcoolCampi">
+      <!-- Contenuto per Alcool Campi -->
+    </div>
+    <div class="tab-content" id="borgio">
+      <!-- Contenuto per Borgio -->
+    </div>
+    <div class="tab-content" id="pippo">
+      <!-- Contenuto per Pippo -->
+    </div>
+    <div class="tab-content" id="fanfa">
+      <!-- Contenuto per Fanfa -->
+    </div>
+    <div class="tab-content" id="maro">
+      <!-- Contenuto per Maro -->
+    </div>
+    <div class="tab-content" id="gigiEdo">
+      <!-- Contenuto per Gigi e Edo -->
+    </div>
+    <div class="tab-content" id="dani">
+      <!-- Contenuto per Dani -->
+    </div>
+    <div class="tab-content" id="albe">
+      <!-- Contenuto per Albe -->
+    </div>
+    <div class="tab-content" id="regolamento">
+      <!-- Contenuto per Regolamento -->
     </div>
   </div>
 
   <script src="script.js"></script>
 </body>
 </html>
+
