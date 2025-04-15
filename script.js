@@ -152,22 +152,21 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function populateSvincolatiTable(tableBody, allPlayers) {
-        allPlayers.forEach(player => {
-            if (!player.Squadra || player.Squadra.trim() === '') { // Modifica qui!
-                tableBody.innerHTML += `
-                    <tr>
-                        <td>${player.Ruolo || ''}</td>
-                        <td>${player.Nome || ''}</td>
-                        <td>Svincolato</td>
-                        <td>${formatCurrency(player.Quotazione)}</td>
-                        <td>${formatCurrency(player.Stipendio)}</td>
-                        <td>${formatCurrency(player.Clausola_Rescissoria)}</td>
-                    </tr>
-                `;
-            }
-        });
-    }
-
+    allPlayers.forEach(player => {
+        if (!player['Squadra Fanta'] || player['Squadra Fanta'].trim() === '') {  // Corretto!
+            tableBody.innerHTML += `
+                <tr>
+                    <td>${player.Ruolo || ''}</td>
+                    <td>${player.Nome || ''}</td>
+                    <td>Svincolato</td>
+                    <td>${formatCurrency(player.Quotazione)}</td>
+                    <td>${formatCurrency(player.Stipendio)}</td>
+                    <td>${formatCurrency(player.Clausola_Rescissoria)}</td>
+                </tr>
+            `;
+        }
+    });
+}
     function formatCurrency(value) {
         return value ? '€ ' + parseFloat(value).toLocaleString('it-IT') : 'N/A';
     }
