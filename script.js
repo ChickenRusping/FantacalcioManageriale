@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(csvData => {
                 const allPlayers = parseCSV(csvData);
                 displayTeamPlayers(allPlayers);
-                displaySvincolati(allPlayers); // Questa funzione è già presente, ma la modificheremo
+                displaySvincolati(allPlayers);
             })
             .catch(error => console.error('Errore nel caricamento dei dati:', error));
     }
@@ -98,36 +98,51 @@ document.addEventListener('DOMContentLoaded', function() {
     function displayTeamPlayers(allPlayers) {
         contentSections.forEach(section => {
             if (section.id.endsWith('-content') && section.id !== 'svincolati-content') {
+                const teamName = section.id.replace('-content', '');
                 const teamContainer = section.querySelector('.team-players');
                 if (teamContainer) {
-                    teamContainer.innerHTML = createTableHTML();
+                    teamContainer.innerHTML = createTableHTMLForTeams(); // Usa la nuova funzione per le squadre
                     const tableBody = teamContainer.querySelector('tbody');
-                    populateTeamTable(tableBody, allPlayers, section.id.replace('-content', ''));
+                    populateTeamTable(tableBody, allPlayers, teamName);
                 }
             }
         });
     }
 
-   function displaySvincolati(allPlayers) {
-    const svincolatiContainer = document.getElementById('svincolati-content').querySelector('.free-agents');
-    if (!svincolatiContainer) {  // Aggiungi questa verifica!
-        console.error("Errore: Elemento .free-agents non trovato all'interno di #svincolati-content");
-        return; // Esci dalla funzione se l'elemento non viene trovato
+    function displaySvincolati(allPlayers) {
+        const svincolatiContainer = document.getElementById('svincolati-content').querySelector('.free-agents');
+        if (svincolatiContainer) {
+            svincolatiContainer.innerHTML = createTableHTMLForSvincolati(); // Usa la nuova funzione per gli svincolati
+            const tableBody = svincolatiContainer.querySelector('tbody');
+            populateSvincolatiTable(tableBody, allPlayers);
+        }
     }
-    svincolatiContainer.innerHTML = createTableHTML();
-    const tableBody = svincolatiContainer.querySelector('tbody');
-    populateSvincolatiTable(tableBody, allPlayers);
-}
 
     // Funzioni di supporto per la creazione e popolazione delle tabelle
-    function createTableHTML() {
+    function createTableHTMLForTeams() {
         return `
             <table>
                 <thead>
                     <tr>
                         <th>Ruolo</th>
                         <th>Nome</th>
-                        <th>Squadra</th>
+                        <th>Quotazione</th>
+                        <th>Stipendio</th>
+                        <th>Clausola Rescissoria</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        `;
+    }
+
+    function createTableHTMLForSvincolati() {
+        return `
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ruolo</th>
+                        <th>Nome</th>
                         <th>Quotazione</th>
                         <th>Stipendio</th>
                         <th>Clausola Rescissoria</th>
@@ -140,12 +155,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function populateTeamTable(tableBody, allPlayers, teamName) {
         allPlayers.forEach(player => {
-            if (player.Squadra && player.Squadra.toLowerCase() === teamName.toLowerCase()) {
+            if (player['Squadra Fanta'] && player['Squadra Fanta'].toLowerCase() === teamName.toLowerCase()) {
                 tableBody.innerHTML += `
                     <tr>
                         <td>${player.Ruolo || ''}</td>
                         <td>${player.Nome || ''}</td>
-                        <td>${player.Squadra || ''}</td>
                         <td>${formatCurrency(player.Quotazione)}</td>
                         <td>${formatCurrency(player.Stipendio)}</td>
                         <td>${formatCurrency(player.Clausola_Rescissoria)}</td>
@@ -156,21 +170,21 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function populateSvincolatiTable(tableBody, allPlayers) {
-    allPlayers.forEach(player => {
-        if (!player['Squadra Fanta'] || player['Squadra Fanta'].trim() === '') {  // Corretto!
-            tableBody.innerHTML += `
-                <tr>
-                    <td>${player.Ruolo || ''}</td>
-                    <td>${player.Nome || ''}</td>
-                    <td>Svincolato</td>
-                    <td>${formatCurrency(player.Quotazione)}</td>
-                    <td>${formatCurrency(player.Stipendio)}</td>
-                    <td>${formatCurrency(player.Clausola_Rescissoria)}</td>
-                </tr>
-            `;
-        }
-    });
-}
+        allPlayers.forEach(player => {
+            if (!player['Squadra Fanta'] || player['Squadra Fanta'].trim() === '') {
+                tableBody.innerHTML += `
+                    <tr>
+                        <td>${player.Ruolo || ''}</td>
+                        <td>${player.Nome || ''}</td>
+                        <td>${formatCurrency(player.Quotazione)}</td>
+                        <td>${formatCurrency(player.Stipendio)}</td>
+                        <td>${formatCurrency(player.Clausola_Rescissoria)}</td>
+                    </tr>
+                `;
+            }
+        });
+    }
+
     function formatCurrency(value) {
         return value ? '€ ' + parseFloat(value).toLocaleString('it-IT') : 'N/A';
     }
