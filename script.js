@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const sidebarTitle = squadreSidebar.querySelector('h3');
 
     // Configurazione per il Google Sheet dei movimenti (STRUTTURA AGGIORNATA)
-    const MOVIMENTI_SHEET_ID = 'YOUR_MOVIMENTI_SHEET_ID'; // Inserisci qui l'ID del tuo foglio Google
-    const MOVIMENTI_SHEET_NAME = 'Sheet1'; // Inserisci qui il nome del foglio
+    const MOVIMENTI_SHEET_ID = '1AEmCFqKgFORg7tZBACHVy8VD4R_9MwlybtZnUl9Y_UA'; // Inserisci qui l'ID del tuo foglio Google
+    const MOVIMENTI_SHEET_NAME = 'Movimenti'; // Inserisci qui il nome del foglio
     const MOVIMENTI_URL = `https://docs.google.com/spreadsheets/d/${MOVIMENTI_SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(MOVIMENTI_SHEET_NAME)}`;
 
     function hideAllSections() {
