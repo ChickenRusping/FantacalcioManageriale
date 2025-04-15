@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(csvData => {
                 const allPlayers = parseCSV(csvData);
                 displayTeamPlayers(allPlayers);
-                displaySvincolati(allPlayers);
+                displaySvincolati(allPlayers); // Questa funzione è già presente, ma la modificheremo
             })
             .catch(error => console.error('Errore nel caricamento dei dati:', error));
     }
@@ -153,12 +153,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function populateSvincolatiTable(tableBody, allPlayers) {
         allPlayers.forEach(player => {
-            if (!player.Squadra) {
+            if (!player.Squadra || player.Squadra.trim() === '') { // Modifica qui!
                 tableBody.innerHTML += `
                     <tr>
                         <td>${player.Ruolo || ''}</td>
                         <td>${player.Nome || ''}</td>
-                        <td>${player.Squadra || 'Svincolato'}</td>
+                        <td>Svincolato</td>
                         <td>${formatCurrency(player.Quotazione)}</td>
                         <td>${formatCurrency(player.Stipendio)}</td>
                         <td>${formatCurrency(player.Clausola_Rescissoria)}</td>
