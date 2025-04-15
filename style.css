@@ -1,22 +1,246 @@
-.tab-buttons button {
-  margin: 5px;
-  padding: 10px;
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
-.tab-content {
-  display: none;
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-.sub-tab-buttons button {
-  margin: 5px;
-  padding: 5px;
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
 }
 
-.sub-tab-content {
-  display: none;
+nav ul li {
+    display: inline;
+    margin: 0 1em;
 }
 
-.image-row img {
-  width: 100px;
-  margin-right: 10px;
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+}
+
+nav a:hover,
+nav li.active a {
+    background-color: #007bff;
+}
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar {
+    width: 25%;
+    padding-right: 20px;
+    border-right: 1px solid #ddd;
+    position: sticky;
+    top: 60px;
+    height: calc(100vh - 80px);
+    overflow-y: auto;
+}
+
+.sidebar h3 {
+    margin-top: 0;
+    color: #555;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    margin-bottom: 0.5em;
+}
+
+.sidebar a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    padding: 0.5em 0;
+}
+
+.sidebar a:hover {
+    color: #007bff;
+}
+
+.main-content {
+    width: 75%;
+    padding-left: 20px;
+    margin-left: 20px;
+}
+
+.main-content h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.main-content h3 {
+    color: #555;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.2em;
+    margin-top: 1.5em;
+}
+
+.main-content ul,
+.main-content ol {
+    margin-bottom: 1em;
+    padding-left: 2em;
+}
+
+/* Stili per le tabelle dei giocatori  */
+.team-players table,
+.free-agents table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.team-players th,
+.team-players td,
+.free-agents th,
+.free-agents td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.team-players th,
+.free-agents th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.team-players tr:nth-child(even),
+.free-agents tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.team-players tr:hover,
+.free-agents tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Stili esistenti (footer, immagini, svincolati)  */
+footer {
+    text-align: center;
+    padding: 1em 0;
+    background-color: #ddd;
+    color: #555;
+    font-size: 0.8em;
+    margin-top: 2em;
+}
+
+.image-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.main-image {
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.thumbnail-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.thumbnail-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px;
+    width: 30%;
+}
+
+.thumbnail {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.thumbnail-text {
+    text-align: center;
+    font-size: 0.8em;
+    color: #555;
+}
+
+#svincolati-content {
+    /* Stili per il contenitore principale */
+}
+
+.giocatore {
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.nome {
+    font-weight: bold;
+}
+
+.ruolo {
+    /* Stili per il ruolo */
+}
+
+.squadra {
+    /* Stili per la squadra */
+}
+
+.eta {
+    /* Stili per l'età */
+}
+
+.quotazione {
+    font-size: 0.9em;
+    color: #888;
+}
+
+.stipendio {
+    /* Stili per lo stipendio */
+}
+
+.clausola {
+    /* Stili per la clausola */
+}
+
+.interesse {
+    /* Stili per l'interesse */
+}
+
+.data {
+    /* Stili per la data */
+}
+
+.altri {
+    /* Stili per altri interessati */
+}
+
+.scadenza {
+    /* Stili per la scadenza */
 }

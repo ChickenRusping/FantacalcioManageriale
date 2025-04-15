@@ -1,0 +1,559 @@
+﻿Nome;Ruolo;Squadra;Quotazione;Stipendio;Clausola Rescissoria
+Meret;Por;Napoli;19;3,8;38
+Milinkovic-Savic V.;Por;Torino;18;3,6;36
+De Gea;Por;Fiorentina;18;3,6;36
+Carnesecchi;Por;Atalanta;16;3,2;32
+Caprile;Por;Cagliari;16;3,2;32
+Leali;Por;Genoa;15;3;30
+Sommer;Por;Inter;15;3;30
+Svilar;Por;Roma;15;3;30
+Skorupski;Por;Bologna;14;2,8;28
+Di Gregorio;Por;Juventus;14;2,8;28
+Maignan;Por;Milan;13;2,6;26
+Turati;Por;Monza;11;2,2;22
+Vasquez D.;Por;Empoli;10;2;20
+Falcone;Por;Lecce;10;2;20
+Suzuki;Por;Parma;10;2;20
+Stankovic F.;Por;Venezia;10;2;20
+Provedel;Por;Lazio;9;1,8;18
+Radu I.;Por;Venezia;9;1,8;18
+Montipo';Por;Verona;8;1,6;16
+Sava;Por;Udinese;8;1,6;16
+Butez;Por;Como;7;1,4;14
+Mandas;Por;Lazio;6;1,2;12
+Okoye;Por;Udinese;6;1,2;12
+Ravaglia F.;Por;Bologna;5;1;10
+Martinez Jo.;Por;Inter;5;1;10
+Reina;Por;Como;4;0,8;8
+Perin;Por;Juventus;4;0,8;8
+Scuffet;Por;Napoli;3;0,6;6
+Sportiello;Por;Milan;3;0,6;6
+Terracciano;Por;Fiorentina;2;0,4;4
+Padelli;Por;Udinese;2;0,4;4
+Joronen;Por;Venezia;2;0,4;4
+Pizzignacco;Por;Monza;2;0,4;4
+Silvestri;Por;Empoli;2;0,4;4
+Rui Patricio;Por;Atalanta;2;0,4;4
+Rossi F.;Por;Atalanta;1;0,2;2
+Bagnolini;Por;Bologna;1;0,2;2
+Sherri;Por;Cagliari;1;0,2;2
+Vigorito;Por;Como;1;0,2;2
+Martinelli T.;Por;Fiorentina;1;0,2;2
+Gollini;Por;Roma;1;0,2;2
+Sommariva;Por;Genoa;1;0,2;2
+Di Gennaro;Por;Inter;1;0,2;2
+Pinsoglio;Por;Juventus;1;0,2;2
+Furlanetto;Por;Lazio;1;0,2;2
+Fruchtl;Por;Lecce;1;0,2;2
+Samooja;Por;Lecce;1;0,2;2
+Nava;Por;Milan;1;0,2;2
+Contini;Por;Napoli;1;0,2;2
+Corvi;Por;Parma;1;0,2;2
+Paleari;Por;Torino;1;0,2;2
+Grandi;Por;Venezia;1;0,2;2
+Berardi A.;Por;Verona;1;0,2;2
+Perilli;Por;Verona;1;0,2;2
+Brancolini;Por;Empoli;1;0,2;2
+Ciocci;Por;Cagliari;1;0,2;2
+Torriani;Por;Milan;1;0,2;2
+Donnarumma An.;Por;Torino;1;0,2;2
+Mazza;Por;Monza;1;0,2;2
+Marin Re.;Por;Roma;1;0,2;2
+Seghetti;Por;Empoli;1;0,2;2
+Piana;Por;Udinese;1;0,2;2
+Marcone;Por;Parma;1;0,2;2
+Siegrist;Por;Genoa;1;0,2;2
+Calligaris;Por;Inter;1;0,2;2
+De Marzi;Por;Roma;1;0,2;2
+Dimarco;E;Inter;22;4,4;44
+Dumfries;E;Inter;19;3,8;38
+Bastoni;Dc;Inter;18;3,6;36
+Carlos Augusto;E;Inter;18;3,6;36
+Zappacosta;E;Atalanta;16;3,2;32
+Zortea;"Dd;Ds;E";Cagliari;16;3,2;32
+Di Lorenzo;"B;Dd;E";Napoli;15;3;30
+Gosens;E;Fiorentina;15;3;30
+Tavares N.;"Ds;E";Lazio;14;2,8;28
+Dodo';"Dd;E";Fiorentina;13;2,6;26
+Cambiaso;"Dd;Ds;E";Juventus;13;2,6;26
+Hernandez T.;"Ds;E";Milan;13;2,6;26
+Buongiorno;Dc;Napoli;13;2,6;26
+Valeri;"Ds;E";Parma;13;2,6;26
+Angelino;"Ds;E";Roma;13;2,6;26
+Martin;"Ds;E";Genoa;12;2,4;24
+Darmian;"B;Dd;E";Inter;12;2,4;24
+Gatti;Dc;Juventus;12;2,4;24
+Marusic;"Dd;Ds;E";Lazio;12;2,4;24
+Rrahmani;Dc;Napoli;12;2,4;24
+Delprato;"B;Dd;E";Parma;12;2,4;24
+Mancini;Dc;Roma;12;2,4;24
+Bellanova;E;Atalanta;12;2,4;24
+Gigot;Dc;Lazio;12;2,4;24
+Miranda J.;"Ds;E";Bologna;11;2,2;22
+Augello;"Ds;E";Cagliari;11;2,2;22
+Pezzella Giu.;"Ds;E";Empoli;11;2,2;22
+Vasquez;"Ds;Dc";Genoa;11;2,2;22
+Kalulu;"Dd;Dc";Juventus;11;2,2;22
+Kyriakopoulos;"Ds;E";Monza;11;2,2;22
+Luperto;Dc;Cagliari;10;2;20
+Ismajli;Dc;Empoli;10;2;20
+Cacace;"Ds;E";Empoli;10;2;20
+Ranieri L.;"Ds;Dc";Fiorentina;10;2;20
+Bisseck;Dc;Inter;10;2;20
+De Vrij;Dc;Inter;10;2;20
+Spinazzola;E;Napoli;10;2;20
+Valenti;Dc;Parma;10;2;20
+N'Dicka;Dc;Roma;10;2;20
+Lazaro;E;Torino;10;2;20
+Bijol;Dc;Udinese;10;2;20
+Idzes;Dc;Venezia;10;2;20
+Savona;"B;Dd;E";Juventus;10;2;20
+Solet;Dc;Udinese;10;2;20
+Beukema;Dc;Bologna;9;1,8;18
+Holm;"Dd;E";Bologna;9;1,8;18
+Lykogiannis;"Ds;E";Bologna;9;1,8;18
+Mina;Dc;Cagliari;9;1,8;18
+Viti;Dc;Empoli;9;1,8;18
+De Winter;"Dd;Dc";Genoa;9;1,8;18
+Acerbi;Dc;Inter;9;1,8;18
+Gila;Dc;Lazio;9;1,8;18
+Kamara H.;"Ds;E";Udinese;9;1,8;18
+Pavlovic;Dc;Milan;9;1,8;18
+Cuadrado;E;Atalanta;9;1,8;18
+Maripan;Dc;Torino;9;1,8;18
+Walker;"B;Dd;E";Milan;9;1,8;18
+Djimsiti;Dc;Atalanta;8;1,6;16
+Kolasinac;"B;Ds;E";Atalanta;8;1,6;16
+Zappa;"B;Dd;E";Cagliari;8;1,6;16
+Parisi;"Ds;E";Fiorentina;8;1,6;16
+Sabelli;"Dd;Ds;E";Genoa;8;1,6;16
+Bremer;Dc;Juventus;8;1,6;16
+Romagnoli;Dc;Lazio;8;1,6;16
+Baschirotto;"Dd;Dc";Lecce;8;1,6;16
+Gabbia;Dc;Milan;8;1,6;16
+Birindelli;"Dd;Ds;E";Monza;8;1,6;16
+Olivera;"B;Ds;E";Napoli;8;1,6;16
+Masina;"B;Ds;E";Torino;8;1,6;16
+Tchatchoua;"Dd;E";Verona;8;1,6;16
+Ruggeri;E;Atalanta;7;1,4;14
+Obert;Dc;Cagliari;7;1,4;14
+Zanoli;"Dd;E";Genoa;7;1,4;14
+Pavard;"Dd;Dc";Inter;7;1,4;14
+De Sciglio;"Dd;Ds;E";Empoli;7;1,4;14
+Gaspar K.;Dc;Lecce;7;1,4;14
+Tomori;Dc;Milan;7;1,4;14
+Coco;Dc;Torino;7;1,4;14
+Vojvoda;"B;Dd;E";Como;7;1,4;14
+Ehizibue;"Dd;E";Udinese;7;1,4;14
+Zemura;"Ds;E";Udinese;7;1,4;14
+Rensch;"B;Dd;E";Roma;7;1,4;14
+Hien;Dc;Atalanta;6;1,2;12
+Lucumi';Dc;Bologna;6;1,2;12
+Dossena;Dc;Como;6;1,2;12
+Biraghi;"B;Ds;E";Torino;6;1,2;12
+Hysaj;"Dd;Ds;E";Lazio;6;1,2;12
+Coppola D.;Dc;Verona;6;1,2;12
+Emerson Royal;"B;Dd;Ds";Milan;6;1,2;12
+Jimenez A.;"Dd;Ds;E";Milan;6;1,2;12
+Kelly L.;"Ds;Dc";Juventus;6;1,2;12
+De Silvestri;"Dd;E";Bologna;5;1;10
+Moreno Alb.;"Ds;E";Como;5;1;10
+Goglichidze;"Dd;Dc";Empoli;5;1;10
+Comuzzo;Dc;Fiorentina;5;1;10
+Pongracic;Dc;Fiorentina;5;1;10
+Vogliacco;"Dd;Dc";Parma;5;1;10
+Lazzari;"Dd;E";Lazio;5;1;10
+Pellegrini Lu.;"Ds;E";Lazio;5;1;10
+Gallo;"Ds;E";Lecce;5;1;10
+Calabria;"Dd;E";Bologna;5;1;10
+Izzo;Dc;Monza;5;1;10
+Mari';Dc;Fiorentina;5;1;10
+Pereira P.;"Dd;E";Monza;5;1;10
+Juan Jesus;"Ds;Dc";Napoli;5;1;10
+Balogh;Dc;Parma;5;1;10
+Celik;"Dd;E";Roma;5;1;10
+Jean;Dc;Lecce;5;1;10
+Kempf;Dc;Como;5;1;10
+Bradaric;"Ds;E";Verona;5;1;10
+Hummels;Dc;Roma;5;1;10
+Candè;"Ds;Dc";Venezia;5;1;10
+Nelsson;Dc;Roma;5;1;10
+Goldaniga;Dc;Como;4;0,8;8
+Walukiewicz;Dc;Torino;4;0,8;8
+Ebuehi;"Dd;E";Empoli;4;0,8;8
+Bani;Dc;Genoa;4;0,8;8
+Zampano;"Dd;Ds;E";Venezia;4;0,8;8
+Dawidowicz;Dc;Verona;4;0,8;8
+Ghilardi;Dc;Verona;4;0,8;8
+Marianucci;Dc;Empoli;4;0,8;8
+Palomino;Dc;Cagliari;4;0,8;8
+Sosa B.;E;Torino;4;0,8;8
+Haps;"Ds;E";Venezia;4;0,8;8
+Pedersen;E;Torino;4;0,8;8
+Sergi Roberto;"E;M";Como;4;0,8;8
+Leoni;Dc;Parma;4;0,8;8
+Guilbert;"B;Dd;Ds";Lecce;4;0,8;8
+Schingtienne;"Dd;Dc";Venezia;4;0,8;8
+Van Der Brempt;"Dd;E";Como;4;0,8;8
+Valentini N.;Dc;Verona;4;0,8;8
+Alberto Costa;"Dd;E";Juventus;4;0,8;8
+Valle;"Ds;E";Como;4;0,8;8
+Smolcic I.;"B;Dd;E";Como;4;0,8;8
+Toloi;Dc;Atalanta;3;0,6;6
+Posch;"Dd;Dc";Atalanta;3;0,6;6
+Marcandalli;Dc;Venezia;3;0,6;6
+Cabal;"B;Ds;E";Juventus;3;0,6;6
+Casale;Dc;Bologna;3;0,6;6
+Thiaw;Dc;Milan;3;0,6;6
+Carboni A.;"Ds;Dc";Monza;3;0,6;6
+D'Ambrosio;"B;Dd;Ds";Monza;3;0,6;6
+Kabasele;Dc;Udinese;3;0,6;6
+Kristensen T.;Dc;Udinese;3;0,6;6
+Svoboda;Dc;Venezia;3;0,6;6
+Sverko;"B;Ds;E";Venezia;3;0,6;6
+Erlic;Dc;Bologna;3;0,6;6
+Kossounou;"Dd;Dc";Atalanta;3;0,6;6
+Sambia;"Dd;E";Empoli;3;0,6;6
+Veiga D.;"Dd;E";Lecce;3;0,6;6
+Sala M.;"Ds;E";Lecce;2;0,4;4
+Matturro;Dc;Genoa;2;0,4;4
+Caldirola;"Ds;Dc";Monza;2;0,4;4
+Marin R.;Dc;Napoli;2;0,4;4
+Mazzocchi;E;Napoli;2;0,4;4
+Faraoni;"Dd;E";Verona;2;0,4;4
+Abdulhamid;"Dd;E";Roma;2;0,4;4
+Carboni F.;"Ds;E";Venezia;2;0,4;4
+Palacios T.;Dc;Monza;2;0,4;4
+Daniliuc;"Dd;Dc";Verona;2;0,4;4
+Bartesaghi;"Ds;E";Milan;2;0,4;4
+Ahanor;"B;Ds;E";Genoa;2;0,4;4
+Lovik;"Ds;E";Parma;2;0,4;4
+Lekovic;Dc;Monza;2;0,4;4
+Tiago Gabriel;Dc;Lecce;2;0,4;4
+Brorsson;Dc;Monza;2;0,4;4
+Provstgaard;Dc;Lazio;2;0,4;4
+Salah-Eddine;"Ds;E";Roma;2;0,4;4
+Scalvini;Dc;Atalanta;1;0,2;2
+Iovine;"Dd;E";Como;1;0,2;2
+Patric;"Dd;Dc";Lazio;1;0,2;2
+Terracciano F.;"Dd;E";Milan;1;0,2;2
+Circati;Dc;Parma;1;0,2;2
+Osorio;Dc;Parma;1;0,2;2
+Sangare' B.;"Dd;E";Roma;1;0,2;2
+Sazonov;Dc;Empoli;1;0,2;2
+Schuurs;Dc;Torino;1;0,2;2
+Giannetti L.;Dc;Udinese;1;0,2;2
+Okou;Dc;Verona;1;0,2;2
+Frese;"Ds;E";Verona;1;0,2;2
+Sagrado;"Dd;E";Venezia;1;0,2;2
+Rouhi;"Ds;E";Juventus;1;0,2;2
+Norton-Cuffy;"Dd;E";Genoa;1;0,2;2
+Dembele' A.;E;Torino;1;0,2;2
+Palestra;E;Atalanta;1;0,2;2
+Moreno M.;Dc;Fiorentina;1;0,2;2
+Toure' I.s.;Dc;Udinese;1;0,2;2
+Florenzi;"Dd;Ds;E";Milan;1;0,2;2
+Jack;"Ds;Dc";Como;1;0,2;2
+Otoa;Dc;Genoa;1;0,2;2
+Oyegoke;"B;Dd;E";Verona;1;0,2;2
+Slotsager;Dc;Verona;1;0,2;2
+Scott;Dc;Lecce;1;0,2;2
+Luan Patrick;Dc;Verona;1;0,2;2
+Orsolini;W;Bologna;31;6,2;62
+Pulisic;"T;A";Milan;29;5,8;58
+Ndoye;W;Bologna;27;5,4;54
+Reijnders;C;Milan;26;5,2;52
+Zaccagni;"W;A";Lazio;25;5;50
+McTominay;"M;C";Napoli;25;5;50
+Saelemaekers;W;Roma;22;4,4;44
+Zambo Anguissa;"M;C";Napoli;22;4,4;44
+Paz N.;"T;A";Como;22;4,4;44
+Calhanoglu;"M;C";Inter;21;4,2;42
+Barella;C;Inter;21;4,2;42
+Thuram K.;"M;C";Juventus;19;3,8;38
+Weah;W;Juventus;19;3,8;38
+Neres;"W;A";Napoli;19;3,8;38
+Strefezza;W;Como;18;3,6;36
+Frattesi;"C;T";Inter;18;3,6;36
+Nicolussi Caviglia;"M;C";Venezia;17;3,4;34
+Man;"W;A";Parma;17;3,4;34
+Vlasic;T;Torino;17;3,4;34
+Ederson D.s.;"M;C";Atalanta;16;3,2;32
+Adli;"M;C";Fiorentina;16;3,2;32
+El Shaarawy;W;Roma;16;3,2;32
+Brescianini;"M;C";Atalanta;16;3,2;32
+De Roon;"M;C";Atalanta;15;3;30
+Koopmeiners;T;Juventus;15;3;30
+Politano;W;Napoli;15;3;30
+Conceicao;"W;A";Juventus;15;3;30
+Diao;"W;A";Como;15;3;30
+Fabbian;"C;T";Bologna;14;2,8;28
+Ferguson;"C;T";Bologna;14;2,8;28
+Da Cunha;"W;T";Como;14;2,8;28
+Mkhitaryan;C;Inter;14;2,8;28
+Dele-Bashiru;"C;T";Lazio;14;2,8;28
+Oristanio;"W;T;A";Venezia;14;2,8;28
+Kone' M.;"M;C";Roma;14;2,8;28
+Elmas;"W;T";Torino;14;2,8;28
+Mandragora;"M;C";Fiorentina;13;2,6;26
+Miretti;"C;T";Genoa;13;2,6;26
+Cataldi;"M;C";Fiorentina;13;2,6;26
+Paredes;"M;C";Roma;13;2,6;26
+Samardzic;T;Atalanta;13;2,6;26
+Ellertsson;"C;W";Venezia;13;2,6;26
+Casadei;"C;T";Torino;13;2,6;26
+Pasalic;"C;T";Atalanta;12;2,4;24
+Freuler;"M;C";Bologna;12;2,4;24
+Marin;"M;C";Cagliari;12;2,4;24
+Frendrup;"E;M";Genoa;12;2,4;24
+Locatelli;"M;C";Juventus;12;2,4;24
+McKennie;"M;C";Juventus;12;2,4;24
+Guendouzi;C;Lazio;12;2,4;24
+Gaetano;T;Cagliari;12;2,4;24
+Hernani;C;Parma;12;2,4;24
+Sohm;C;Parma;12;2,4;24
+Cristante;"M;C";Roma;12;2,4;24
+Gineitis;C;Torino;12;2,4;24
+Lovric;C;Udinese;12;2,4;24
+Zerbin;"E;W";Venezia;12;2,4;24
+Ekkelenkamp;"C;T";Udinese;12;2,4;24
+Fofana Y.;"M;C";Milan;12;2,4;24
+Viola;"C;T";Cagliari;11;2,2;22
+Colpani;T;Fiorentina;11;2,2;22
+Zielinski;"C;T";Inter;11;2,2;22
+Pellegrini Lo.;"C;T";Roma;11;2,2;22
+Caqueret;C;Como;11;2,2;22
+Ikone';W;Como;10;2;20
+Douglas Luiz;C;Juventus;10;2;20
+Rovella;"M;C";Lazio;10;2;20
+Tete Morente;W;Lecce;10;2;20
+Pobega;"M;C";Bologna;10;2;20
+Lobotka;"M;C";Napoli;10;2;20
+Bernabe';"C;T";Parma;10;2;20
+Ricci S.;"M;C";Torino;10;2;20
+Fadera;"W;A";Como;10;2;20
+Anjorin;"W;T";Empoli;10;2;20
+Zaniolo;"T;A";Fiorentina;9;1,8;18
+Gyasi;W;Empoli;9;1,8;18
+Bianco;"M;C";Monza;9;1,8;18
+Sottil;W;Milan;9;1,8;18
+Loftus-Cheek;"C;T";Milan;9;1,8;18
+Chukwueze;"W;A";Milan;9;1,8;18
+Ciurria;"E;W";Monza;9;1,8;18
+Maldini;"T;A";Atalanta;9;1,8;18
+Busio;C;Venezia;9;1,8;18
+Lazovic;W;Verona;9;1,8;18
+Pisilli;C;Roma;9;1,8;18
+Cornet;"W;A";Genoa;9;1,8;18
+Felici;"E;W";Cagliari;8;1,6;16
+Bove;"M;C";Fiorentina;8;1,6;16
+Baldanzi;"T;A";Roma;8;1,6;16
+Duda;"M;C";Verona;8;1,6;16
+Coulibaly L.;"M;C";Lecce;8;1,6;16
+Helgason;"C;T";Lecce;8;1,6;16
+Ondrejka;"W;A";Parma;8;1,6;16
+Henderson L.;"C;T";Empoli;7;1,4;14
+Badelj;"M;C";Genoa;7;1,4;14
+Malinovskyi;"C;T";Genoa;7;1,4;14
+Fagioli;"C;T";Fiorentina;7;1,4;14
+Vecino;"M;C";Lazio;7;1,4;14
+Payero;C;Udinese;7;1,4;14
+Karlstrom;"M;C";Udinese;7;1,4;14
+Doumbia I.;"M;C";Venezia;7;1,4;14
+Perrone;"M;C";Como;7;1,4;14
+Perez K.;"C;T";Venezia;7;1,4;14
+Adopo;"M;C";Cagliari;6;1,2;12
+Grassi;"M;C";Empoli;6;1,2;12
+Fazzini;"C;T";Empoli;6;1,2;12
+Asllani;"M;C";Inter;6;1,2;12
+Pierret;"M;C";Lecce;6;1,2;12
+Ilic;C;Torino;6;1,2;12
+Kastanos;"C;T";Verona;6;1,2;12
+Suslov;"W;T";Verona;6;1,2;12
+Gilmour;"M;C";Napoli;6;1,2;12
+Atta;"M;C";Udinese;6;1,2;12
+Masini;C;Genoa;6;1,2;12
+Moro N.;"M;C";Bologna;5;1;10
+Urbanski;"C;W;T";Monza;5;1;10
+Karlsson;"W;A";Lecce;5;1;10
+Deiola;"M;C";Cagliari;5;1;10
+Makoumbou;"M;C";Cagliari;5;1;10
+Messias;"C;W";Genoa;5;1;10
+Ramadani;"M;C";Lecce;5;1;10
+Musah;"C;W";Milan;5;1;10
+Folorunsho;"C;T";Fiorentina;5;1;10
+Belahyane;"M;C";Lazio;5;1;10
+Harroui;"W;T";Verona;5;1;10
+Engelhardt;"M;C";Como;5;1;10
+Berisha M.;"C;T";Lecce;5;1;10
+Rui Modesto;"E;W";Udinese;5;1;10
+Keita M.;"M;C";Parma;5;1;10
+Yeboah J.;"W;T";Venezia;5;1;10
+Billing;"C;T";Napoli;5;1;10
+Veiga R.;"M;C";Juventus;5;1;10
+Onana J.;"M;C";Genoa;5;1;10
+Bernede;"M;C";Verona;5;1;10
+Thorsby;C;Genoa;4;0,8;8
+Castrovilli;"C;T";Monza;4;0,8;8
+Tchaouna;W;Lazio;4;0,8;8
+Maleh;C;Empoli;4;0,8;8
+Bondo;"M;C";Milan;4;0,8;8
+Camara D.;"C;T";Parma;4;0,8;8
+Zalewski;W;Inter;4;0,8;8
+Linetty;"M;C";Torino;4;0,8;8
+Tameze;"M;C";Torino;4;0,8;8
+Serdar;"M;C";Verona;4;0,8;8
+Sensi;"C;T";Monza;4;0,8;8
+Hainaut;"E;C";Parma;4;0,8;8
+Martins K.;"E;W";Monza;4;0,8;8
+Ndour;"M;C";Fiorentina;4;0,8;8
+Prati;"M;C";Cagliari;3;0,6;6
+Rafia;"C;T";Lecce;3;0,6;6
+Zeroli;"C;T";Monza;3;0,6;6
+Pessina;"M;C";Monza;3;0,6;6
+Zarraga;"M;C";Udinese;3;0,6;6
+Richardson;"M;C";Fiorentina;3;0,6;6
+Gourna-Douath;"M;C";Roma;3;0,6;6
+Aebischer;"C;T";Bologna;2;0,4;4
+Braunoder;"M;C";Como;2;0,4;4
+Haas;"M;C";Empoli;2;0,4;4
+Akpa Akpro;"M;C";Monza;2;0,4;4
+Kaba;"M;C";Lecce;2;0,4;4
+Gagliardini;"M;C";Monza;2;0,4;4
+Forson O.;"W;T";Monza;2;0,4;4
+Vignato S.;"T;A";Monza;2;0,4;4
+Estevez;"M;C";Parma;2;0,4;4
+Duncan;C;Venezia;2;0,4;4
+Bjarkason;"C;W";Venezia;2;0,4;4
+Zurkowski;"C;T";Empoli;2;0,4;4
+Pafundi;"T;A";Udinese;2;0,4;4
+Condè;"M;C";Venezia;2;0,4;4
+Ibrahimovic A.;"W;T";Lazio;2;0,4;4
+Niasse;"M;C";Verona;2;0,4;4
+Kovalenko;"C;T";Empoli;2;0,4;4
+Sulemana I.;"M;C";Atalanta;1;0,2;2
+El Azzouzi;"M;C";Bologna;1;0,2;2
+Jankto;"E;C";Cagliari;1;0,2;2
+Marchwinski;T;Lecce;1;0,2;2
+Crnigoj;C;Venezia;1;0,2;2
+Adzic;T;Juventus;1;0,2;2
+Liberali;"W;T";Milan;1;0,2;2
+El Haddad;T;Venezia;1;0,2;2
+Cassa;C;Atalanta;1;0,2;2
+Byar;"C;T";Bologna;1;0,2;2
+Cisse' A.;"W;T";Verona;1;0,2;2
+Manzoni;"C;T";Atalanta;1;0,2;2
+Vos;"M;C";Milan;1;0,2;2
+Hasa;"C;T";Napoli;1;0,2;2
+Basic;C;Lazio;1;0,2;2
+Kasa;"M;C";Genoa;1;0,2;2
+Venturino;W;Genoa;1;0,2;2
+Alli;T;Como;1;0,2;2
+Cuenca H.;"W;T";Genoa;1;0,2;2
+Retegui;Pc;Atalanta;38;7,6;76
+Lookman;A;Atalanta;34;6,8;68
+Kean;Pc;Fiorentina;34;6,8;68
+Thuram;Pc;Inter;33;6,6;66
+Lukaku;Pc;Napoli;31;6,2;62
+Martinez L.;Pc;Inter;29;5,8;58
+Vlahovic;Pc;Juventus;25;5;50
+Dovbyk;Pc;Roma;25;5;50
+Gimenez;Pc;Milan;25;5;50
+Castellanos;Pc;Lazio;24;4,8;48
+Leao;A;Milan;24;4,8;48
+Yildiz;A;Juventus;23;4,6;46
+Dybala;A;Roma;23;4,6;46
+Esposito Se.;A;Empoli;22;4,4;44
+Gudmundsson A.;A;Fiorentina;22;4,4;44
+Odgaard;A;Bologna;21;4,2;42
+Castro S.;Pc;Bologna;21;4,2;42
+Krstovic;Pc;Lecce;21;4,2;42
+Thauvin;A;Udinese;21;4,2;42
+Lucca;Pc;Udinese;21;4,2;42
+Dia;Pc;Lazio;21;4,2;42
+De Ketelaere;A;Atalanta;20;4;40
+Pedro;A;Lazio;20;4;40
+Adams C.;A;Torino;20;4;40
+Dominguez B.;A;Bologna;20;4;40
+Piccoli;Pc;Cagliari;18;3,6;36
+Pinamonti;Pc;Genoa;18;3,6;36
+Kolo Muani;Pc;Juventus;18;3,6;36
+Beltran L.;A;Fiorentina;17;3,4;34
+Bonny;Pc;Parma;17;3,4;34
+Tengstedt;Pc;Verona;17;3,4;34
+Cutrone;Pc;Como;16;3,2;32
+Colombo;Pc;Empoli;16;3,2;32
+Shomurodov;Pc;Roma;16;3,2;32
+Isaksen;"W;A";Lazio;15;3;30
+Mota;A;Monza;15;3;30
+Soule';"W;A";Roma;15;3;30
+Zapata D.;Pc;Torino;15;3;30
+Sarr A.;A;Verona;15;3;30
+Scamacca;Pc;Atalanta;14;2,8;28
+Cambiaghi;A;Bologna;14;2,8;28
+Mosquera;Pc;Verona;14;2,8;28
+Mbangula;A;Juventus;14;2,8;28
+Gonzalez N.;A;Juventus;13;2,6;26
+Arnautovic;Pc;Inter;13;2,6;26
+Djuric;Pc;Parma;13;2,6;26
+Raspadori;A;Napoli;13;2,6;26
+Ekuban;A;Genoa;12;2,4;24
+Noslin;A;Lazio;12;2,4;24
+Abraham;Pc;Milan;12;2,4;24
+Pierotti;"W;A";Lecce;11;2,2;22
+Douvikas;Pc;Como;11;2,2;22
+Caprari;A;Monza;10;2;20
+Correa;A;Inter;10;2;20
+Joao Felix;A;Milan;10;2;20
+Dallinga;Pc;Bologna;9;1,8;18
+Jovic;Pc;Milan;9;1,8;18
+Bravo;A;Udinese;9;1,8;18
+Coman F.;A;Cagliari;9;1,8;18
+Keita B.;A;Monza;9;1,8;18
+Luvumbo;A;Cagliari;8;1,6;16
+Cancellieri;"W;A";Parma;8;1,6;16
+Davis K.;Pc;Udinese;8;1,6;16
+Gytkjaer;Pc;Venezia;8;1,6;16
+Karamoh;A;Torino;8;1,6;16
+Fila;Pc;Venezia;8;1,6;16
+Simeone;Pc;Napoli;7;1,4;14
+Almqvist;"W;A";Parma;7;1,4;14
+Ekhator;Pc;Genoa;7;1,4;14
+Kouame';A;Empoli;6;1,2;12
+Charpentier;Pc;Parma;6;1,2;12
+Pellegri;Pc;Empoli;6;1,2;12
+Sanabria;Pc;Torino;6;1,2;12
+Pellegrino M.;Pc;Parma;6;1,2;12
+Taremi;Pc;Inter;5;1;10
+Okafor;A;Napoli;5;1;10
+Haj Mohamed;A;Parma;5;1;10
+Ganvoula;Pc;Monza;5;1;10
+Pavoletti;Pc;Cagliari;4;0,8;8
+Vitinha O.;Pc;Genoa;4;0,8;8
+Mihaila;"W;A";Parma;4;0,8;8
+Brenner;A;Udinese;4;0,8;8
+Rocha Livramento;Pc;Verona;4;0,8;8
+Rebic;A;Lecce;4;0,8;8
+N'Dri;"W;A";Lecce;4;0,8;8
+Banda;"W;A";Lecce;3;0,6;6
+Sanchez;A;Udinese;3;0,6;6
+Balotelli;Pc;Genoa;3;0,6;6
+Burnete;Pc;Lecce;2;0,4;4
+Petagna;Pc;Monza;2;0,4;4
+Solbakken;A;Empoli;2;0,4;4
+Maric;Pc;Venezia;2;0,4;4
+Njie;A;Torino;2;0,4;4
+Vlahovic V.;Pc;Atalanta;2;0,4;4
+Lambourde;A;Verona;2;0,4;4
+Salama;Pc;Torino;2;0,4;4
+Mutandwa;Pc;Cagliari;1;0,2;2
+Gabrielloni;Pc;Como;1;0,2;2
+Milik;Pc;Juventus;1;0,2;2
+Camarda;Pc;Milan;1;0,2;2
+Ngonge;"W;A";Napoli;1;0,2;2
+Benedyczak;A;Parma;1;0,2;2
+Pizarro;Pc;Udinese;1;0,2;2
+Kowalski;A;Parma;1;0,2;2
+Sansone;A;Lecce;1;0,2;2
+Pedrola;"W;A";Bologna;1;0,2;2
+Azon;Pc;Como;1;0,2;2

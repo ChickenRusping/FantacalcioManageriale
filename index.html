@@ -1,39 +1,621 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Team Dashboard</title>
-  <link rel="stylesheet" href="style.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Il Mio Sito</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="tab-container">
-    <div class="tab-buttons">
-      <button onclick="showTab('alcoolCampi')">Alcool Campi</button>
-      <button onclick="showTab('borgio')">Borgio</button>
-      <button onclick="showTab('pippo')">Pippo</button>
-      <button onclick="showTab('fanfa')">Fanfa</button>
-      <button onclick="showTab('maro')">Maro</button>
-      <button onclick="showTab('gigiEdo')">Gigi e Edo</button>
-      <button onclick="showTab('dani')">Dani</button>
-      <button onclick="showTab('albe')">Albe</button>
-      <button onclick="showTab('regolamento')">Regolamento</button>
+    <header>
+        <nav>
+            <ul>
+                <li class="active"><a href="#regolamento-content">Regolamento</a></li>
+                <li><a href="#alcool-campi-content">Alcool Campi</a></li>
+                <li><a href="#balillareal-content">Balillareal</a></li>
+                <li><a href="#lascopo-educativo-content">Lascopo Educativo</a></li>
+                <li><a href="#ac-finocchiona-content">AC Finocchiona</a></li>
+                <li><a href="#as-fogliatella-content">AS Fogliatella</a></li>
+                <li><a href="#dandandan-content">Dandandan</a></li>
+                <li><a href="#as-pisciazz-content">AS Pisciazz</a></li>
+                <li><a href="#ac-minchia-content">AC Minchia</a></li>
+                <li><a href="#svincolati-content">Svincolati</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar" id="regolamento-sidebar">
+            <h3>Regolamento</h3>
+            <ul>
+                <li><a href="#regolamento-rosa">Rosa</a></li>
+                <li><a href="#regolamento-asta">Asta</a></li>
+                <li><a href="#regolamento-stipendi">Stipendi</a></li>
+                <li><a href="#regolamento-svincoli">Svincoli</a></li>
+                <li><a href="#regolamento-acquisti">Acquisti tra Presidenti</a></li>
+                <li><a href="#regolamento-guadagno">Guadagno Crediti</a></li>
+                <li><a href="#regolamento-premi">Premi Stagionali</a></li>
+                <li><a href="#regolamento-investimenti">Investimenti</a></li>
+                <li><a href="#regolamento-spese">Spese Fisse</a></li>
+                <li><a href="#regolamento-penalizzazioni">Penalizzazioni</a></li>
+                <li><a href="#regolamento-partite">Regole Partita</a></li>
+            </ul>
+        </aside>
+
+        <aside class="sidebar" id="squadre-sidebar" style="display: none;">
+            <h3>[Nome Squadra]</h3>
+            <ul>
+                <li><a href="#squadra-descrizione">Descrizione</a></li>
+                <li><a href="#squadra-rosa">Rosa</a></li>
+                <li><a href="#squadra-bilancio">Bilancio</a></li>
+                <li><a href="#squadra-movimenti">Movimenti</a></li>
+                <li><a href="#squadra-clausole">Clausole</a></li>
+                <li><a href="#squadra-input">Input Giornata</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <section id="regolamento-content">
+                 <h2>Regolamento</h2>
+    <p>Tutto questo può essere soggetto a modifiche e si deve intendere come una bozza di regole per i prossimi fanta manageriali a venire, i valori sono indicativi e anch'essi soggetti a modifiche.</p>
+
+     <h3 id="regolamento-rosa">Rosa</h3>
+    <p>La rosa deve essere composta da 3 portieri e 20 giocatori di movimento divisi come in excel sul bilancio.</p>
+    <p>A questi possono essere aggiunti 4 giocatori aggiuntivi di qualsiasi età e altri 3 con la regola di dover essere under 21.</p>
+    <p>La rosa non può mai avere meno di 23 giocatori.</p>
+    <p>La rosa può comprendere anche due allenatori.</p>
+
+     <h3 id="regolamento-asta">Asta</h3>
+    <p>Rosa Randomizzata: Estrazione di 23 giocatori nei vari ruoli.</p>
+    <p>Il budget verrà in seguito deciso partendo dalla media del valore totale di tutte le rose e aggiungendo un tot di milioni che verrà deciso al momento (in base a quanto è grande la forbice di valori tra primo e ultimo).</p>
+    <p>Si genereranno così, probabilmente, squadre che avranno più milioni da spendere e altre meno in base a quanto sono forti le loro squadre e anche squadre che partiranno indebitate e quindi costrette a cedere giocatori per non incorrere in penalizzazioni, essendo questo debito generato dall'asta random, i normali tempi necessari per non essere penalizzati saranno allungati di 3 giorni.</p>
+    <p>Si procede ora con un'asta a buste chiuse sugli under-21 e i 4 opzionali come se fossero nella lista svincolati.</p>
+    <p>Una volta costituite le rose queste pesano sul salary cap pari alla quotazione del giocatore/5 e il salary cap è impostato per il primo anno per tutti a 75 mln (per il prossimo anno potrebbe essere interessante porlo inversamente proporzionale rispetto alla posizione in classifica).</p>
+    <p>Una volta definita la rosa viene aperta un'asta libera con base di partenza a 1 min per gli allenatori.</p>
+
+     <h3 id="regolamento-stipendi">Stipendi</h3>
+    <p>Ogni sessione invernale i contratti dei 5 giocatori che sono migliorati maggiormente in termini di quotazione attuale vanno adeguati.</p>
+    <p>Allo stesso modo ai 5 giocatori che sono peggiorati di più può essere adeguato il contratto alla nuova quotazione, quel giocatore risulterà però scontento e sarà costretto ad essere venduto o svincolato nella sessione estiva a meno che non sia over 30 (e quindi in fase calante di carriera).</p>
+    <p>Dopo ogni anno i giocatori che rimangono in una squadra richiedono uno stipendio maggiore, questo stipendio diventa pari alla quotazione/5+10% della stessa quotazione, il secondo anno si aggiunge il 20% e così via.</p>
+
+    <h3 id="regolamento-svincoli">Svincoli</h3>
+    <p>Si possono svincolare giocatori con due modalità:</p>
+    <h4>Ordinario:</h4>
+    <ul>
+        <li>Quando si vuole, non ci sono limiti nel numero di svincoli.</li>
+        <li>Bisogna pagare una penale pari a (inserire immagine della formula: 1/4 del valore della QA + quanto avrebbe gravato nel salary cap per il resto della stagione) (ad es. un giocatore che vale 40 QA e ha uno stipendio di 8 necessita di un pagamento pari a 10+8 se è svincolato prima della sessione invernale di mercato e pari a 10+4 se invece è tra la sessione invernale e quella estiva).</li>
+        <li>Non è possibile svincolare prima di 60 giorni e non è possibile ricomprare un giocatore prima di 30 giorni.</li>
+    </ul>
+    <h4>Straordinario:</h4>
+    <ul>
+        <li>Solo 5 nel periodo estivo e 3 nel periodo invernale, gli under-21 non sono conteggiati.</li>
+        <li>Viene rimborsato (inserire immagine della formula: 1/4 della QA attuale del giocatore + lo stipendio pagato fino a quel momento) (le stesse cifre descritte sopra), a meno che non si trasferisca all'estero, in questo caso sarà rimborsato 1/2 dell'ultima QA + lo stipendio pagato fino a quel momento.</li>
+        <li>Uguale a come sopra.</li>
+    </ul>
+
+     <h3 id="regolamento-acquisti">Acquisti tra Presidenti</h3>
+    <p>Sono possibili solo nei mesi tra giugno e settembre e gennaio e febbraio, sono possibili acquisti, scambi, prestiti, diritti, obblighi e qualunque clausola vi possa venire in mente, ogni trasferimento deve essere obbligatoriamente comunicato a tutti gli altri presidenti nel modo più chiaro possibile.</p>
+    <p>Per acquistare giocatori svincolati il presidente deve annunciare l'intenzione a comprarlo e gli altri presidenti hanno una settimana per esprimere anche il loro interesse, nel caso siano interessati si procede alle buste chiuse con base d'asta pari a QA/2 mentre se non lo sono il giocatore viene acquistato al prezzo di QA/2.</p>
+    <p>La base dell'offerta deve essere almeno pari a (inserire immagine della formula: 1/2 della QA), se questa cambia prima di un esito della trattativa, l'offerta deve essere riconsiderata con i nuovi parametri.</p>
+    <p>Dall'apertura della trattativa, ad ogni offerta i presidenti hanno massimo 3 giorni, non sono contati i giorni di partita dei giocatori in questione, per accettare, rifiutare o proporre una controfferta.</p>
+    <p>Ogni giocatore ha una clausola rescissoria pari al doppio della QA chi esercita la clausola paga l'intera cifra mentre all'altro presidente entreranno nelle casse 3/4 della clausola.</p>
+    <p>La possibilità di esercitare la clausola si attiva solo dopo che l'altro presidente ha rifiutato almeno una offerta.</p>
+    <p>L'acquisto tramite clausola può essere effettuato solo ad almeno 3 giorni prima dell'inizio della prossima giornata.</p>
+
+    <h3 id="regolamento-guadagno">Guadagno Crediti</h3>
+    <p>Il numero di gol segnati in ogni partita conferiscono un premio partita pari al numero di gol/2, quindi se una squadra segna 1 gol gli vengono conferiti 0,5 mln, se ne segna 2 allora 1 e così via.</p>
+    <p>Ogni partita giocata in casa fornisce 2 min alla squadra in casa mentre la squadra in trasferta deve pagare 0,5 mln per poter andare in trasferta.</p>
+    <p>Ad ogni sessione di mercato potranno essere aggiunti milioni (da decidere quanti e con che criterio).</p>
+    <p>La presenza di un allenatore, comunicata sul gruppo whatsapp prima dell'inizio della giornata, conferisce i seguenti bonus:</p>
+    <ul>
+        <li>0,2 mln per ogni giocatore della sua squadra reale nella formazione della giornata.</li>
+        <li>0,25 mln per ogni assist effettuato da giocatori della sua squadra.</li>
+        <li>0,5 mln per ogni gol effettuato.</li>
+        <li>0,25 mln per ogni porta inviolata o rigore parato.</li>
+        <li>-0,1 mln per ogni cartellino giallo.</li>
+        <li>-0,2 mln per ogni cartellino rosso, autorete o rigore sbagliato.</li>
+    </ul>
+    <p>Alla fine di ogni giornata, entro 48h dal calcolo, è necessario mandare il bilancio di guadagno, o perdita, dei crediti della relativa giornata, pena la perdita del guadagno o il raddoppio della perdita.</p>
+
+    <h4>Tabella Bonus per Giornata:</h4>
+    <table class="formatted-table">
+        <thead>
+            <tr>
+                <th>Gol Segnati</th>
+                <th>Milioni Guadagnati</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>0,5</td>
+            </tr>
+             <tr>
+                <td>2</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>1,5</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>2,5</td>
+            </tr>
+             <tr>
+                <td>6</td>
+                <td>3</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h4>2. Costi Stadio</h4>
+    <table class="formatted-table">
+        <thead>
+            <tr>
+                <th>Squadra in Casa</th>
+                <th>Squadra in Trasferta</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2</td>
+                <td>-0,5</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h4>3. Bonus Allenatore</h4>
+    <table class="formatted-table">
+        <thead>
+            <tr>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Presenza</td>
+                <td>0,2</td>
+            </tr>
+            <tr>
+                <td>Assist</td>
+                <td>0,25</td>
+            </tr>
+            <tr>
+                <td>Gol</td>
+                <td>0,5</td>
+            </tr>
+            <tr>
+                <td>Porta Inviolata</td>
+                <td>0,25</td>
+            </tr>
+            <tr>
+                <td>Rigore Parato</td>
+                <td>0,25</td>
+            </tr>
+            <tr>
+                <td>Ammonizione</td>
+                <td>-0,1</td>
+            </tr>
+            <tr>
+                <td>Espulsione</td>
+                <td>-0,2</td>
+            </tr>
+            <tr>
+                <td>Autorete</td>
+                <td>-0,2</td>
+            </tr>
+            <tr>
+                <td>Rigore Sbagliato</td>
+                <td>-0,2</td>
+            </tr>
+        </tbody>
+    </table>
+
+     <h3 id="regolamento-premi">Premi Stagionali</h3>
+    <p>Alla fine del campionato, in base al piazzamento effettuato, saranno distribuiti i seguenti milioni:</p>
+    <ul>
+        <li>8 posizione: 40 mln</li>
+        <li>7 posizione: 37,5 mln</li>
+        <li>6 posizione: 35 mln</li>
+        <li>5 posizione: 32,5 mln</li>
+        <li>4 posizione: 30 mln</li>
+        <li>3 posizione: 27,5 mln</li>
+        <li>2 posizione: 25 mln</li>
+        <li>1 posizione 22,5 mln</li>
+    </ul>
+    <p>A questi vanno aggiunti i premi per la coppa Italia:</p>
+    <ul>
+        <li>Primo classificato: 7,5 mln</li>
+        <li>Secondo classificato: 5 mln</li>
+        <li>Terzo e quarto posto: 2,5 mln</li>
+    </ul>
+    <p>Saranno anche concessi premi individuali come:</p>
+    <ul>
+        <li>Primo in gol fatti: 2,5 mln</li>
+        <li>Primo in gol subiti: 2 mln</li>
+        <li>Presidente con il miglior marcatore in rosa: 1,5 mln</li>
+        <li>Presidente con il miglior assist man in rosa: 1,5 min</li>
+        <li>Presidente con il maggior numero di porte inviolate: 1,5 mln</li>
+    </ul>
+    <p>A questi verranno invece tolti milioni per:</p>
+    <ul>
+        <li>Presidente con il maggior numero di ammonizioni in campo: 1 mln</li>
+        <li>Presidente con il maggior numero di espulsioni in campo: 1 mln</li>
+        <li>Presidente con il maggior numero di autogol in campo: 1 mln</li>
+    </ul>
+
+    <h3 id="regolamento-investimenti">Investimenti</h3>
+    <p>All'inizio dell'anno sarà possibile effettuare degli investimenti che possano garantire un ritorno maggiore in più o meno tempo:</p>
+    <ul>
+        <li>12 mln: valido per 1½ stagione, il proprio stadio garantirà premi partita moltiplicati per 1,5 non sono inclusi le entrate dalle partite in casa ma solo bonus e malus dati da gol segnati e prestazioni dei giocatori con l'allenatore (anche i malus vengono raddoppiati.</li>
+        <li>24 mln: come sopra ma per tutta la stagione.</li>
+    </ul>
+
+    <h3 id="regolamento-spese">Spese Fisse</h3>
+    <p>Al termine dell'ultima partita stagionale giocata in casa è prevista una spesa fissa di manutenzione dello stadio pari a 20 milioni.</p>
+    <p>Questa cifra è possibile dividerla in due tranche: una da 8 il 31/12 e una da 12 l'ultima giornata in casa.</p>
+
+    <h3 id="regolamento-penalizzazioni">Penalizzazioni</h3>
+    <p>Se la formazione non viene schierata o l'allenatore non è dichiarato, non si ha diritto ai premi di partita né alla consegna dei soldi se si gioca in casa mentre le spese di trasferta risultano raddoppiate, la partita è comunque giocata e può essere vinta.</p>
+    <p>Il termine ultimo per schierare la formazione è 1 secondo prima del fischio d'inizio.</p>
+    <p>Se il budget risulta in negativo si procede ad una penalizzazione in base a quanto è in negativo, prima di procedere alla penalizzazione completa ci vogliono 3 settimane:</p>
+    <ul>
+        <li>Da 0 a 20: 5 punti di penalizzazione dopo una settimana, ulteriori -3 dopo 2 e altri -2 dopo 3.</li>
+        <li>Da -20 a -40: 10 punti di penalizzazione dopo una settimana, ulteriori -5 dopo 2 e altri -5 dopo 3.</li>
+        <li>Da -40 a -60: 15 punti di penalizzazione dopo una settimana, ulteriori -5 dopo 2 e altri -5 dopo 3.</li>
+    </ul>
+    <p>Se una rosa eccede il numero massimo di giocatori è costretta a vendere o svincolare giocatori entro l'inizio della giornata, in caso questo non venga fatto il presidente è costretto a non schierare la formazione e avere 0 come punteggio.</p>
+    <p>Se il salary cap viene ecceduto il presidente sarà costretto a rientrare entro i parametri entro la prossima giornata, altrimenti sarà costretto a non mettere la formazione e avere 0 come punteggio.</p>
+
+    <h3 id="regolamento-partite">Regole Partita</h3>
+    <p>Vengono conferiti i seguenti bonus oltre ai classici:</p>
+    <ul>
+        <li>Capitano e vicecapitano</li>
+        <li>Modificatore Difesa</li>
+        <li>MVP (+0,5)</li>
+        <li>Fair Play</li>
+        <li>Simulazione</li>
+    </ul>
+            </section>
+
+            <section id="alcool-campi-content" style="display: none;">
+    <h2>Alcool Campi</h2>
+        <div class="image-layout">
+        <img src="images/alcool-campi/img1.png" alt="Immagine Grande Alcool Campi" class="main-image">
+
+        <div class="thumbnail-container">
+            <div class="thumbnail-wrapper">
+                <img src="images/alcool-campi/img2.png" alt="Immagine 2 Alcool Campi" class="thumbnail">
+                <p class="thumbnail-text">Home Kit</p>
+            </div>
+            <div class="thumbnail-wrapper">
+                <img src="images/alcool-campi/img3.png" alt="Immagine 3 Alcool Campi" class="thumbnail">
+                <p class="thumbnail-text">Away Kit</p>
+            </div>
+            <div class="thumbnail-wrapper">
+                <img src="images/alcool-campi/img4.png" alt="Immagine 4 Alcool Campi" class="thumbnail">
+                <p class="thumbnail-text">Third Kit</p>
+            </div>
+        </div>
     </div>
 
-    <!-- Tab dei presidenti -->
-    <div class="tab-content" id="alcoolCampi"></div>
-    <div class="tab-content" id="borgio"></div>
-    <div class="tab-content" id="pippo"></div>
-    <div class="tab-content" id="fanfa"></div>
-    <div class="tab-content" id="maro"></div>
-    <div class="tab-content" id="gigiEdo"></div>
-    <div class="tab-content" id="dani"></div>
-    <div class="tab-content" id="albe"></div>
-    
-    <!-- Tab di regolamento -->
-    <div class="tab-content" id="regolamento"></div>
-  </div>
+    <h3 id="squadra-descrizione">Descrizione</h3>
+    <p>Fondata nel 2023 sulle ceneri della Mignottingham Forest, Alcool Campi è ormai al terzo anno nel fantacalcio. Dopo un secondo posto nel 2024 e un ... nel 2025, la squadra è ora pronta a confrontarsi col cambio di categoria passando da 6 a 8 ed è pronta a puntare allo scudetto.</p>
 
-  <script src="script.js"></script>
+    <h3 id="squadra-rosa">Rosa</h3>
+    <p>Qui inserirai l'elenco dei giocatori della rosa...</p>
+
+    <h3 id="squadra-bilancio">Bilancio</h3>
+    <p>Qui inserirai le informazioni sul bilancio della squadra...</p>
+
+    <h3 id="squadra-movimenti">Movimenti</h3>
+    <p>Qui inserirai i trasferimenti e altri movimenti di mercato della squadra...</p>
+
+    <h3 id="squadra-clausole">Clausole</h3>
+    <p>Qui inserirai le clausole contrattuali dei giocatori della squadra...</p>
+
+    <h3 id="squadra-input">Input Giornata</h3>
+    <p>Qui inserirai le informazioni relative all'input della giornata (formazione, ecc.)...</p>
+</section>
+
+<section id="balillareal-content" style="display: none;">
+    <h2>Balillareal</h2>
+    <div class="image-layout">
+        <img src="images/balillareal/img1.png" alt="Immagine Grande Balillareal" class="main-image">
+
+        <div class="thumbnail-container">
+            <div class="thumbnail-wrapper">
+                <img src="images/balillareal/img2.png" alt="Immagine 2 Balillareal" class="thumbnail">
+                <p class="thumbnail-text">Home Kit</p>
+            </div>
+            <div class="thumbnail-wrapper">
+                <img src="images/balillareal/img3.png" alt="Immagine 3 Balillareal" class="thumbnail">
+                <p class="thumbnail-text">Away Kit</p>
+            </div>
+            <div class="thumbnail-wrapper">
+                <img src="images/balillareal/img4.png" alt="Immagine 4 Balillareal" class="thumbnail">
+                <p class="thumbnail-text">Third Kit</p>
+            </div>
+        </div>
+    </div>
+
+    <h3 id="squadra-descrizione">Descrizione</h3>
+    <p>Qui inserirai la descrizione dettagliata della squadra...</p>
+
+    <h3 id="squadra-rosa">Rosa</h3>
+    <p>Qui inserirai l'elenco dei giocatori della rosa...</p>
+
+    <h3 id="squadra-bilancio">Bilancio</h3>
+    <p>Qui inserirai le informazioni sul bilancio della squadra...</p>
+
+    <h3 id="squadra-movimenti">Movimenti</h3>
+    <p>Qui inserirai i trasferimenti e altri movimenti di mercato della squadra...</p>
+
+    <h3 id="squadra-clausole">Clausole</h3>
+    <p>Qui inserirai le clausole contrattuali dei giocatori della squadra...</p>
+
+    <h3 id="squadra-input">Input Giornata</h3>
+    <p>Qui inserirai le informazioni relative all'input della giornata (formazione, ecc.)...</p>
+</section>
+
+<section id="lascopo-educativo-content" style="display: none;">
+    <h2>Lascopo Educativo</h2>
+    <div class="image-layout">
+        <img src="images/lascopo-educativo/img1.png" alt="Immagine Grande Lascopo Educativo" class="main-image">
+
+        <div class="thumbnail-container">
+            <div class="thumbnail-wrapper">
+                <img src="images/lascopo-educativo/img2.png" alt="Immagine 2 Lascopo Educativo" class="thumbnail">
+                <p class="thumbnail-text">Home Kit</p>
+            </div>
+            <div class="thumbnail-wrapper">
+                <img src="images/lascopo-educativo/img3.png" alt="Immagine 3 Lascopo Educativo" class="thumbnail">
+                <p class="thumbnail-text">Away Kit</p>
+            </div>
+            <div class="thumbnail-wrapper">
+                <img src="images/lascopo-educativo/img4.png" alt="Immagine 4 Lascopo Educativo" class="thumbnail">
+                <p class="thumbnail-text">Third Kit</p>
+            </div>
+        </div>
+    </div>
+
+    <h3 id="squadra-descrizione">Descrizione</h3>
+    <p>Qui inserirai la descrizione dettagliata della squadra...</p>
+
+    <h3 id="squadra-rosa">Rosa</h3>
+    <p>Qui inserirai l'elenco dei giocatori della rosa...</p>
+
+    <h3 id="squadra-bilancio">Bilancio</h3>
+    <p>Qui inserirai le informazioni sul bilancio della squadra...</p>
+
+    <h3 id="squadra-movimenti">Movimenti</h3>
+    <p>Qui inserirai i trasferimenti e altri movimenti di mercato della squadra...</p>
+
+    <h3 id="squadra-clausole">Clausole</h3>
+    <p>Qui inserirai le clausole contrattuali dei giocatori della squadra...</p>
+
+    <h3 id="squadra-input">Input Giornata</h3>
+    <p>Qui inserirai le informazioni relative all'input della giornata (formazione, ecc.)...</p>
+</section>
+
+<section id="ac-finocchiona-content" style="display: none;">
+    <h2>AC Finocchiona</h2>
+    <div class="image-layout">
+        <img src="images/ac-finocchiona/img1.png" alt="Immagine Grande AC Finocchiona" class="main-image">
+
+        <div class="thumbnail-container">
+            <div class="thumbnail-wrapper">
+                <img src="images/ac-finocchiona/img2.png" alt="Immagine 2 AC Finocchiona" class="thumbnail">
+                <p class="thumbnail-text">Home Kit</p>
+            </div>
+            <div class="thumbnail-wrapper">
+                <img src="images/ac-finocchiona/img3.png" alt="Immagine 3 AC Finocchiona" class="thumbnail">
+                <p class="thumbnail-text">Away Kit</p>
+            </div>
+            <div class="thumbnail-wrapper">
+                <img src="images/ac-finocchiona/img4.png" alt="Immagine 4 AC Finocchiona" class="thumbnail">
+                <p class="thumbnail-text">Third Kit</p>
+            </div>
+        </div>
+    </div>
+
+    <h3 id="squadra-descrizione">Descrizione</h3>
+    <p>Qui inserirai la descrizione dettagliata della squadra...</p>
+
+    <h3 id="squadra-rosa">Rosa</h3>
+    <p>Qui inserirai l'elenco dei giocatori della rosa...</p>
+
+    <h3 id="squadra-bilancio">Bilancio</h3>
+    <p>Qui inserirai le informazioni sul bilancio della squadra...</p>
+
+    <h3 id="squadra-movimenti">Movimenti</h3>
+    <p>Qui inserirai i trasferimenti e altri movimenti di mercato della squadra...</p>
+
+    <h3 id="squadra-clausole">Clausole</h3>
+    <p>Qui inserirai le clausole contrattuali dei giocatori della squadra...</p>
+
+    <h3 id="squadra-input">Input Giornata</h3>
+    <p>Qui inserirai le informazioni relative all'input della giornata (formazione, ecc.)...</p>
+</section>
+
+<section id="as-fogliatella-content" style="display: none;">
+    <h2>AS Fogliatella</h2>
+    <div class="image-layout">
+        <img src="images/as-fogliatella/img1.png" alt="Immagine Grande AS Fogliatella" class="main-image">
+
+        <div class="thumbnail-container">
+            <div class="thumbnail-wrapper">
+                <img src="images/as-fogliatella/img2.png" alt="Immagine 2 AS Fogliatella" class="thumbnail">
+                <p class="thumbnail-text">Home Kit</p>
+            </div>
+            <div class="thumbnail-wrapper">
+                <img src="images/as-fogliatella/img3.png" alt="Immagine 3 AS Fogliatella" class="thumbnail">
+                <p class="thumbnail-text">Away Kit</p>
+            </div>
+            <div class="thumbnail-wrapper">
+                <img src="images/as-fogliatella/img4.png" alt="Immagine 4 AS Fogliatella" class="thumbnail">
+                <p class="thumbnail-text">Third Kit</p>
+            </div>
+        </div>
+    </div>
+
+    <h3 id="squadra-descrizione">Descrizione</h3>
+    <p>Qui inserirai la descrizione dettagliata della squadra...</p>
+
+    <h3 id="squadra-rosa">Rosa</h3>
+    <p>Qui inserirai l'elenco dei giocatori della rosa...</p>
+
+    <h3 id="squadra-bilancio">Bilancio</h3>
+    <p>Qui inserirai le informazioni sul bilancio della squadra...</p>
+
+    <h3 id="squadra-movimenti">Movimenti</h3>
+    <p>Qui inserirai i trasferimenti e altri movimenti di mercato della squadra...</p>
+
+    <h3 id="squadra-clausole">Clausole</h3>
+    <p>Qui inserirai le clausole contrattuali dei giocatori della squadra...</p>
+
+    <h3 id="squadra-input">Input Giornata</h3>
+    <p>Qui inserirai le informazioni relative all'input della giornata (formazione, ecc.)...</p>
+</section>
+
+<section id="dandandan-content" style="display: none;">
+    <h2>Dandandan</h2>
+    <div class="image-layout">
+        <img src="images/dandandan/img1.png" alt="Immagine Grande Dandandan" class="main-image">
+
+        <div class="thumbnail-container">
+            <div class="thumbnail-wrapper">
+                <img src="images/dandandan/img2.png" alt="Immagine 2 Dandandan" class="thumbnail">
+                <p class="thumbnail-text">Home Kit</p>
+            </div>
+            <div class="thumbnail-wrapper">
+                <img src="images/dandandan/img3.png" alt="Immagine 3 Dandandan" class="thumbnail">
+                <p class="thumbnail-text">Away Kit</p>
+            </div>
+            <div class="thumbnail-wrapper">
+                <img src="images/dandandan/img4.png" alt="Immagine 4 Dandandan" class="thumbnail">
+                <p class="thumbnail-text">Third Kit</p>
+            </div>
+        </div>
+    </div>
+
+    <h3 id="squadra-descrizione">Descrizione</h3>
+    <p>Qui inserirai la descrizione dettagliata della squadra...</p>
+
+    <h3 id="squadra-rosa">Rosa</h3>
+    <p>Qui inserirai l'elenco dei giocatori della rosa...</p>
+
+    <h3 id="squadra-bilancio">Bilancio</h3>
+    <p>Qui inserirai le informazioni sul bilancio della squadra...</p>
+
+    <h3 id="squadra-movimenti">Movimenti</h3>
+    <p>Qui inserirai i trasferimenti e altri movimenti di mercato della squadra...</p>
+
+    <h3 id="squadra-clausole">Clausole</h3>
+    <p>Qui inserirai le clausole contrattuali dei giocatori della squadra...</p>
+
+    <h3 id="squadra-input">Input Giornata</h3>
+    <p>Qui inserirai le informazioni relative all'input della giornata (formazione, ecc.)...</p>
+</section>
+
+<section id="as-pisciazz-content" style="display: none;">
+    <h2>AS Pisciazz</h2>
+    <div class="image-layout">
+        <img src="images/as-pisciazz/img1.png" alt="Immagine Grande AS Pisciazz" class="main-image">
+
+        <div class="thumbnail-container">
+            <div class="thumbnail-wrapper">
+                <img src="images/as-pisciazz/img2.png" alt="Immagine 2 AS Pisciazz" class="thumbnail">
+                <p class="thumbnail-text">Home Kit</p>
+            </div>
+            <div class="thumbnail-wrapper">
+                <img src="images/as-pisciazz/img3.png" alt="Immagine 3 AS Pisciazz" class="thumbnail">
+                <p class="thumbnail-text">Away Kit</p>
+            </div>
+            <div class="thumbnail-wrapper">
+                <img src="images/as-pisciazz/img4.png" alt="Immagine 4 AS Pisciazz" class="thumbnail">
+                <p class="thumbnail-text">Third Kit</p>
+            </div>
+        </div>
+    </div>
+
+    <h3 id="squadra-descrizione">Descrizione</h3>
+    <p>Qui inserirai la descrizione dettagliata della squadra...</p>
+
+    <h3 id="squadra-rosa">Rosa</h3>
+    <p>Qui inserirai l'elenco dei giocatori della rosa...</p>
+
+    <h3 id="squadra-bilancio">Bilancio</h3>
+    <p>Qui inserirai le informazioni sul bilancio della squadra...</p>
+
+    <h3 id="squadra-movimenti">Movimenti</h3>
+    <p>Qui inserirai i trasferimenti e altri movimenti di mercato della squadra...</p>
+
+    <h3 id="squadra-clausole">Clausole</h3>
+    <p>Qui inserirai le clausole contrattuali dei giocatori della squadra...</p>
+
+    <h3 id="squadra-input">Input Giornata</h3>
+    <p>Qui inserirai le informazioni relative all'input della giornata (formazione, ecc.)...</p>
+</section>
+
+<section id="ac-minchia-content" style="display: none;">
+    <h2>AC Minchia</h2>
+    <div class="image-layout">
+        <img src="images/ac-minchia/img1.png" alt="Immagine Grande AC Minchia" class="main-image">
+
+        <div class="thumbnail-container">
+            <div class="thumbnail-wrapper">
+                <img src="images/ac-minchia/img2.png" alt="Immagine 2 AC Minchia" class="thumbnail">
+                <p class="thumbnail-text">Home Kit</p>
+            </div>
+            <div class="thumbnail-wrapper"> <img src="images/ac-minchia/img3.png" alt="Immagine 3 AC Minchia" class="thumbnail">
+                <p class="thumbnail-text">Away Kit</p>
+            </div>
+            <div class="thumbnail-wrapper">
+                <img src="images/ac-minchia/img4.png" alt="Immagine 4 AC Minchia" class="thumbnail">
+                <p class="thumbnail-text">Third Kit</p>
+            </div>
+        </div>
+    </div>
+
+    <h3 id="squadra-descrizione">Descrizione</h3>
+    <p>Qui inserirai la descrizione dettagliata della squadra...</p>
+
+    <h3 id="squadra-rosa">Rosa</h3>
+    <p>Qui inserirai l'elenco dei giocatori della rosa...</p>
+
+    <h3 id="squadra-bilancio">Bilancio</h3>
+    <p>Qui inserirai le informazioni sul bilancio della squadra...</p>
+
+    <h3 id="squadra-movimenti">Movimenti</h3>
+    <p>Qui inserirai i trasferimenti e altri movimenti di mercato della squadra...</p>
+
+    <h3 id="squadra-clausole">Clausole</h3>
+    <p>Qui inserirai le clausole contrattuali dei giocatori della squadra...</p>
+
+    <h3 id="squadra-input">Input Giornata</h3>
+    <p>Qui inserirai le informazioni relative all'input della giornata (formazione, ecc.)...</p>
+</section>
+
+<section id="svincolati-content">
+    <h2>Giocatori Svincolati</h2>
+
+    <div id="svincolati-container">
+    </div>
+
+</section>
+        </main>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
