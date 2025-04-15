@@ -108,12 +108,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    function displaySvincolati(allPlayers) {
-        const svincolatiContainer = document.getElementById('svincolati-content').querySelector('.free-agents');
-        svincolatiContainer.innerHTML = createTableHTML();
-        const tableBody = svincolatiContainer.querySelector('tbody');
-        populateSvincolatiTable(tableBody, allPlayers);
+   function displaySvincolati(allPlayers) {
+    const svincolatiContainer = document.getElementById('svincolati-content').querySelector('.free-agents');
+    if (!svincolatiContainer) {  // Aggiungi questa verifica!
+        console.error("Errore: Elemento .free-agents non trovato all'interno di #svincolati-content");
+        return; // Esci dalla funzione se l'elemento non viene trovato
     }
+    svincolatiContainer.innerHTML = createTableHTML();
+    const tableBody = svincolatiContainer.querySelector('tbody');
+    populateSvincolatiTable(tableBody, allPlayers);
+}
 
     // Funzioni di supporto per la creazione e popolazione delle tabelle
     function createTableHTML() {
