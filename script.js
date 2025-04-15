@@ -81,7 +81,42 @@ function addPresidentsContent() {
         'text': 'Descrizione di Borgio.'
       },
     },
-    // Aggiungi i dati per gli altri presidenti
+    'pippo': {
+      'descrizione': {
+        'images': ['img1_pippo.jpg', 'img2_pippo.jpg', 'img3_pippo.jpg', 'img4_pippo.jpg'],
+        'text': 'Descrizione di Pippo.'
+      },
+    },
+    'fanfa': {
+      'descrizione': {
+        'images': ['img1_fanfa.jpg', 'img2_fanfa.jpg', 'img3_fanfa.jpg', 'img4_fanfa.jpg'],
+        'text': 'Descrizione di Fanfa.'
+      },
+    },
+    'maro': {
+      'descrizione': {
+        'images': ['img1_maro.jpg', 'img2_maro.jpg', 'img3_maro.jpg', 'img4_maro.jpg'],
+        'text': 'Descrizione di Maro.'
+      },
+    },
+    'gigiEdo': {
+      'descrizione': {
+        'images': ['img1_gigiEdo.jpg', 'img2_gigiEdo.jpg', 'img3_gigiEdo.jpg', 'img4_gigiEdo.jpg'],
+        'text': 'Descrizione di Gigi e Edo.'
+      },
+    },
+    'dani': {
+      'descrizione': {
+        'images': ['img1_dani.jpg', 'img2_dani.jpg', 'img3_dani.jpg', 'img4_dani.jpg'],
+        'text': 'Descrizione di Dani.'
+      },
+    },
+    'albe': {
+      'descrizione': {
+        'images': ['img1_albe.jpg', 'img2_albe.jpg', 'img3_albe.jpg', 'img4_albe.jpg'],
+        'text': 'Descrizione di Albe.'
+      },
+    },
   };
   
   presidentTabs.forEach(tabName => {
