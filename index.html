@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -8,8 +8,8 @@
 </head>
 <body>
   <div class="tab-container">
+    <!-- Tab principali -->
     <div class="tab-buttons" id="mainTabs">
-      <!-- Main tabs -->
       <button onclick="showTab('alcool campi')">Alcool Campi</button>
       <button onclick="showTab('borgio')">Borgio</button>
       <button onclick="showTab('pippo')">Pippo</button>
@@ -21,10 +21,12 @@
       <button onclick="showTab('regolamento')">Regolamento</button>
     </div>
 
-    <div class="sub-tabs" id="subTabs" style="display:none;"></div>
+    <!-- Sottotab dinamici -->
+    <div class="sub-tabs" id="subTabs"></div>
 
+    <!-- Area contenuti -->
     <div class="content" id="contentArea">
-      <p>Seleziona una tab principale per iniziare.</p>
+      <p>Caricamento in corso...</p>
     </div>
   </div>
 
