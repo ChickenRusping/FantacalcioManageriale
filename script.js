@@ -7,4 +7,4 @@ function showTab(tabId) {
 }
 
 // Show Alice's tab by default
-window.onload = () => showTab('alice');
+window.onload = () => showTab('regolamento');
